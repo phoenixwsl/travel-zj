@@ -27,6 +27,11 @@
     .notice b{white-space:nowrap}
     .map-shell{position:relative;overflow:hidden;border-radius:26px;background:#fff;box-shadow:var(--shadow);aspect-ratio:16/10}
     .map-shell>img{display:block;width:100%;height:100%;object-fit:contain;background:#f5f4ed}
+    .map-distance{position:absolute;left:14px;right:14px;bottom:14px;padding:10px 12px;border-radius:12px;background:rgba(255,254,248,.92);border:1px solid #dce6df;backdrop-filter:blur(4px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;box-shadow:0 8px 22px rgba(24,58,64,.08)}
+    .map-distance strong{display:block;font-size:13px}
+    .map-distance span{font-size:12px;color:var(--muted);display:inline-block}
+    .map-distance .total{grid-column:1/-1;font-size:12px;color:#4f6769}
+    .map-distance p{margin:0;line-height:1.5}
     .hotspot{position:absolute;width:clamp(30px,3.5vw,55px);height:clamp(30px,3.5vw,55px);margin:calc(clamp(30px,3.5vw,55px)/-2);border:0;border-radius:50%;background:transparent;cursor:pointer;outline-offset:4px}
     .hotspot:focus-visible{outline:4px solid #fff;box-shadow:0 0 0 7px var(--coral)}
     .hotspot::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,5px);white-space:nowrap;padding:7px 10px;border-radius:9px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.18s ease}
@@ -68,7 +73,7 @@
     .hotel ul{margin:8px 0 0 18px;padding:0;color:var(--muted);font-size:13px;line-height:1.7}
     footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7}
     footer a{color:var(--teal)}
-    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
+    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.map-distance{grid-template-columns:1fr;left:8px;right:8px;bottom:8px}.control-card{width:100%;border-radius:0 0 18px 18px}}
     @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.days{grid-template-columns:1fr}.hotel-grid{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
     @media print{body{background:#fff}.page{padding:0}.header-actions,.notice,.control-card,.facts,footer{display:none}.map-shell{box-shadow:none;border-radius:0}}
   </style>
@@ -96,6 +101,14 @@
       <button class="hotspot h-wz" data-tip="温州·1晚" aria-label="查看温州行程" onclick="selectStop('wenzhou')"></button>
       <button class="hotspot h-cn" data-tip="苍南168·1晚" aria-label="查看苍南168行程" onclick="selectStop('cangnan')"></button>
       <button class="hotspot h-jy" data-tip="缙云仙都·1晚" aria-label="查看缙云仙都行程" onclick="selectStop('jinyun')"></button>
+      <div class="map-distance" aria-label="里程参考">
+        <p><strong>杭→宁波：</strong><span>约155km，约2h</span></p>
+        <p><strong>宁波→温州：</strong><span>约240km，约2.5h</span></p>
+        <p><strong>温州→炎亭：</strong><span>约160km，约2h（沿浙南168北段）</span></p>
+        <p><strong>炎亭→缙云：</strong><span>约260km，约3.5h</span></p>
+        <p><strong>缙云→杭州：</strong><span>约170km，约3h</span></p>
+        <p class="total"><strong>全程参考：</strong><span>主线约885km，含市内穿梭后约950-1000km；净开车时长约11.5-12.5h</span></p>
+      </div>
     </section>
 
     <section class="control-card" aria-label="路线分段说明">
@@ -126,16 +139,15 @@
       <div class="fact"><strong>海</strong><span>苍南“浙南168”北段（崇家岙—炎亭—海口）贯穿D4，留时间看海与日落。</span></div>
       <div class="fact"><strong>人文</strong><span>天一阁、宁波鼓楼、东湖、小加州、韩玲老街、老外滩夜景、温州老城、仙都摩崖题记。</span></div>
       <div class="fact"><strong>美食</strong><span>宁波菜、温州早餐与小吃、炎亭海鲜、缙云烧饼。</span></div>
-      <div class="fact"><strong>行驶里程（参考）</strong><span>大段里程：杭→宁波≈155km，宁波→温州≈240km，温州→崇家岙/炎亭≈160km，炎亭→缙云≈260km，缙云→杭≈170km；合计约885km。再加景点间短途和机动后，约950-1000km。净开车时长约11.5-12.5小时（含上下客+绕行预估）。</span></div>
     </section>
 
     <section class="itinerary" aria-label="每天时间线">
       <h2>每天具体时间点</h2>
       <div class="days">
         <article class="day">
-          <strong>D1（9月25 日，周五）· 杭州→宁波（约2h）</strong>
+          <strong>D1（9月25 日，周五）· 杭州→宁波（约155km，约2h）</strong>
           <ul class="time-list">
-            <li>08:30 杭州出发，途中补给水和水果，途中避免高峰；杭州不做景点与美食推荐。</li>
+            <li>08:30 杭州出发（约155km，约2h），途中补给水和水果，尽量避开高峰。</li>
             <li>09:00 餐1（早餐）：建议以酒店或沿途轻食补充，杭州版块不做美食定向推荐。</li>
             <li>10:30 左右到达宁波，先做入住酒店。</li>
             <li>12:00 餐2（午餐）：宁波汤圆、面结面、宁波小面，作为本地第一口。</li>
@@ -146,9 +158,10 @@
         </article>
 
         <article class="day">
-          <strong>D2（9月26 日，周六）· 宁波本地人文</strong>
+          <strong>D2（9月26 日，周六）· 宁波本地人文（市内活动）</strong>
           <ul class="time-list">
-            <li>08:30 宁波酒店早餐：宁波汤圆、粢饭、现炒面点（小份更友好）。</li>
+            <li>08:30 当地出发活动（宁波市内往返，市区公里在20-30km内）。</li>
+            <li>09:00 宁波酒店早餐：宁波汤圆、粢饭、现炒面点（小份更友好）。</li>
             <li>09:30 游东湖+小加州：先在东湖公园边缘停留，再去小加州湿地边线。</li>
             <li>11:00 餐2（午餐）：前往东湖/韩岭片区餐厅尝宁波河鲜、糟香小吃、面结面。</li>
             <li>14:30 韩岭老街（俗称韩玲老街）逛一圈，沿线轻徒步。</li>
@@ -159,9 +172,9 @@
         </article>
 
         <article class="day">
-          <strong>D3（9月27 日，周日）· 宁波→温州（约2.5h）</strong>
+          <strong>D3（9月27 日，周日）· 宁波→温州（约240km，约2.5h）</strong>
           <ul class="time-list">
-            <li>07:30 起床，8:00出发（防止中午车流高峰）。</li>
+            <li>07:30 起床，08:00出发（约240km，约2.5h），防止中午车流高峰。</li>
             <li>09:30 餐1（早餐）：到温州酒店退房前可先点温州小笼、温州粥面、蒸饺。</li>
             <li>13:00 餐2（午餐）：温州老城优先温州鱼丸、温州粿条、米粥。</li>
             <li>14:30 江心屿海岛观景。</li>
@@ -172,10 +185,10 @@
         </article>
 
         <article class="day">
-          <strong>D4（9月28 日，周一）· 温州→苍南（168北段）</strong>
+          <strong>D4（9月28 日，周一）· 温州→苍南（约160km，约2h）</strong>
           <ul class="time-list">
             <li>08:00 餐1（早餐）：温州蒸馍、米粥、鱼丸汤，轻量补给。</li>
-            <li>10:00 从温州出发上浙南168北段，10:30 左右到崇家岙，继续向海边看景。</li>
+            <li>10:00 从温州出发上浙南168北段，约160km，10:30左右到崇家岙，继续向海边看景。</li>
             <li>11:30 餐2（午餐）：海边简餐可选清淡海鲜饭、蒸鱼面或米饭套餐。</li>
             <li>15:00 在浙南168上到海口村再回炎亭区，保留一段靠海视角。</li>
             <li>17:00 酒店 check-in，餐3（晚餐）先吃当天鲜（梭子蟹、虾、扇贝）。</li>
@@ -185,9 +198,9 @@
         </article>
 
         <article class="day">
-          <strong>D5（9月29 日，周二）· 苍南→缙云（约3.5h）</strong>
+          <strong>D5（9月29 日，周二）· 苍南→缙云（约260km，约3.5h）</strong>
           <ul class="time-list">
-            <li>08:00 继续在炎亭看海后出发。</li>
+            <li>08:00 继续在炎亭看海后出发（约260km，约3.5h）。</li>
             <li>10:30-11:00 餐1（早餐）：沿途可轻食补给，偏米粥或蒸饺。</li>
             <li>11:30 左右到缙云县城办理入住，收拾后休息。</li>
             <li>13:00 餐2（午餐）：景区或县城可点面食、米粉，少辣清爽。</li>
@@ -199,7 +212,7 @@
         </article>
 
         <article class="day">
-          <strong>D6（9月30 日，周三）· 缙云→杭州（约3h）</strong>
+          <strong>D6（9月30 日，周三）· 缙云→杭州（约170km，约3h）</strong>
           <ul class="time-list">
             <li>08:00 仙都最后一站看景，不赶时间。</li>
             <li>09:00 餐1（早餐）：缙云风格土爽面、热豆浆或米粥，退房前先补。</li>
@@ -215,12 +228,12 @@
     <section class="itinerary" aria-label="行程速览版">
       <h2>每天精简时间点（速览版）</h2>
       <ul class="compact-schedule">
-        <li><strong>D1（9月25）</strong> 08:30 杭州出发 → 10:30 到宁波入住；14:30 天一阁+宁波鼓楼；19:30 老外滩灯影；21:00 前到店休息。</li>
-        <li><strong>D2（9月26）</strong> 08:30 早餐后到东湖+小加州；14:30 韩玲老街；19:30 南塘老街轻走；21:00 回酒店。</li>
-        <li><strong>D3（9月27）</strong> 08:00 出发去温州；13:00 江心屿；17:30 五马街/公园路；21:00 前回温州酒店。</li>
-        <li><strong>D4（9月28）</strong> 上午温州出发上浙南168北段，11:30 左右到崇家岙，15:00 左右在海口村转入炎亭，17:00 入住炎亭；20:00 夜巷轻步。</li>
-        <li><strong>D5（9月29）</strong> 08:00 炎亭出发；11:30 缙云入住；14:30-16:30 仙都绕景（轻徒步，孩子状态允许可轻度爬山）；19:30 缙云夜景。</li>
-        <li><strong>D6（9月30）</strong> 08:00 仙都最后补点；09:00 退房前早餐；16:00-17:00 返杭；19:00 左右到杭州。</li>
+        <li><strong>D1（9月25）</strong> 08:30 杭州出发（≈155km、约2h）→ 10:30 到宁波入住；14:30 天一阁+宁波鼓楼；19:30 老外滩灯影；21:00 前到店休息。</li>
+        <li><strong>D2（9月26）</strong> 全天宁波市内逛点（里程约20-30km以内）；14:30 韩玲老街；19:30 南塘老街轻走；21:00 回酒店。</li>
+        <li><strong>D3（9月27）</strong> 08:00 出发去温州（≈240km、约2.5h）；13:00 江心屿；17:30 五马街/公园路；21:00 前回温州酒店。</li>
+        <li><strong>D4（9月28）</strong> 从温州出发到苍南北段（≈160km、约2h）；11:30 到崇家岙；15:00 海口村转炎亭；17:00 入住炎亭；20:00 夜巷轻步。</li>
+        <li><strong>D5（9月29）</strong> 08:00 炎亭出发（≈260km、约3.5h）；11:30 缙云入住；14:30-16:30 仙都绕景（轻徒步，孩子状态允许可轻度爬山）；19:30 缙云夜景。</li>
+        <li><strong>D6（9月30）</strong> 08:00 仙都最后补点；09:00 退房前早餐；16:00-17:00 返杭（≈170km、约3h）；19:00 左右到杭州。</li>
       </ul>
     </section>
 
