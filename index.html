@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>浙江亲子自驾路线地图｜山海人文美食休闲游</title>
+  <style>
+    :root{
+      --ink:#183a40;--muted:#687d7e;--paper:#f8f5ed;--card:#fffdf8;
+      --teal:#1f6d78;--coral:#ef6f55;--gold:#e6aa52;--green:#76956b;
+      --line:#dce6df;--shadow:0 18px 55px rgba(28,61,65,.13)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 6% 0,#f8e8ca 0,transparent 24rem),linear-gradient(135deg,#fbf8f1,#eef4ef);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}
+    a{color:inherit}
+    .page{width:min(1680px,100%);margin:auto;padding:28px clamp(14px,3vw,46px) 50px}
+    header{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:4px 0 18px}
+    h1{font-size:clamp(27px,3vw,44px);line-height:1.15;margin:0 0 8px;letter-spacing:.02em}
+    .subtitle{margin:0;color:var(--muted);font-size:clamp(14px,1.4vw,18px)}
+    .header-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .button,.segment button{border:1px solid transparent;border-radius:999px;padding:10px 16px;background:#fff;color:var(--ink);font:inherit;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 16px rgba(28,61,65,.07);transition:.2s ease}
+    .button:hover,.segment button:hover{transform:translateY(-1px);box-shadow:0 7px 20px rgba(28,61,65,.12)}
+    .button.primary{background:var(--ink);color:#fff}
+    .notice{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:11px 15px;border:1px solid #e2c990;border-radius:14px;background:#fff7df;color:#6a5729;font-size:14px}
+    .notice b{white-space:nowrap}
+    .map-shell{position:relative;overflow:hidden;border-radius:26px;background:#fff;box-shadow:var(--shadow);aspect-ratio:16/10}
+    .map-shell>img{display:block;width:100%;height:100%;object-fit:contain;background:#f5f4ed}
+    .hotspot{position:absolute;width:clamp(30px,3.5vw,55px);height:clamp(30px,3.5vw,55px);margin:calc(clamp(30px,3.5vw,55px)/-2);border:0;border-radius:50%;background:transparent;cursor:pointer;outline-offset:4px}
+    .hotspot:focus-visible{outline:4px solid #fff;box-shadow:0 0 0 7px var(--coral)}
+    .hotspot::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,5px);white-space:nowrap;padding:7px 10px;border-radius:9px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.18s ease}
+    .hotspot:hover::after,.hotspot:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+    .h-hz{left:15.75%;top:22.1%}.h-nb{left:57.3%;top:33%}.h-wz{left:32.6%;top:73.2%}.h-cn{left:31.2%;top:87.5%}.h-jy{left:16.45%;top:58.2%}
+    .control-card{position:relative;margin:-6px auto 0;width:calc(100% - 30px);padding:18px;border-radius:0 0 24px 24px;background:rgba(255,253,248,.96);box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+    .segment{display:flex;gap:8px;overflow:auto;padding:2px 2px 12px;scrollbar-width:thin}
+    .segment button{box-shadow:none;border-color:#dbe5df;background:#fff;white-space:nowrap;padding:8px 14px}
+    .segment button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .detail{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:22px;padding:18px 5px 5px;border-top:1px solid var(--line)}
+    .detail h2{margin:0 0 9px;font-size:clamp(21px,2vw,29px)}
+    .detail p{margin:0;color:#50696b;line-height:1.75}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+    .tag{padding:7px 11px;border-radius:999px;background:#ecf3ef;color:#365955;font-size:13px;font-weight:700}
+    .detail-side{padding:15px 17px;border-radius:18px;background:#f1f5ef}
+    .detail-side h3{font-size:15px;margin:0 0 8px}
+    .detail-side p{font-size:14px;line-height:1.65}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .navlinks a{padding:8px 11px;border-radius:10px;background:#fff;color:var(--teal);font-size:13px;font-weight:750;text-decoration:none;border:1px solid #d8e4df}
+    .navlinks a:hover{border-color:var(--teal)}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+    .fact{padding:18px;border-radius:18px;background:var(--card);border:1px solid #e2e9e3}
+    .fact strong{display:block;font-size:19px;margin-bottom:5px}.fact span{font-size:13px;color:var(--muted);line-height:1.55}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7}
+    footer a{color:var(--teal)}
+    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
+    @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
+    @media print{body{background:#fff}.page{padding:0}.header-actions,.notice,.control-card,.facts,footer{display:none}.map-shell{box-shadow:none;border-radius:0}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>浙江亲子自驾 · 山海人文美食休闲游</h1>
+        <p class="subtitle">6天5晚｜2026年9月25—30日｜杭州—宁波—温州—苍南炎亭—缙云仙都—杭州</p>
+      </div>
+      <div class="header-actions">
+        <a class="button" href="./浙江亲子自驾路线地图.png" download>下载 PNG</a>
+        <a class="button" href="./浙江亲子自驾路线地图.svg" download>下载 SVG</a>
+        <button class="button primary" type="button" onclick="window.print()">打印 / 存PDF</button>
+      </div>
+    </header>
+
+    <div class="notice"><b>地图说明</b><span>点地图上的编号或下方城市，可看每段玩法与导航入口；路线是地理连线示意，实际行车以当天导航为准。</span></div>
+
+    <section class="map-shell" aria-label="浙江亲子自驾路线地图">
+      <img src="./浙江亲子自驾路线地图.svg" alt="杭州经宁波、温州、苍南、缙云返回杭州的六天五晚路线地图">
+      <button class="hotspot h-hz" data-tip="杭州·起终点" aria-label="查看杭州起终点说明" onclick="selectStop('hangzhou')"></button>
+      <button class="hotspot h-nb" data-tip="宁波·2晚" aria-label="查看宁波行程" onclick="selectStop('ningbo')"></button>
+      <button class="hotspot h-wz" data-tip="温州·1晚" aria-label="查看温州行程" onclick="selectStop('wenzhou')"></button>
+      <button class="hotspot h-cn" data-tip="苍南168·1晚" aria-label="查看苍南168行程" onclick="selectStop('cangnan')"></button>
+      <button class="hotspot h-jy" data-tip="缙云仙都·1晚" aria-label="查看缙云仙都行程" onclick="selectStop('jinyun')"></button>
+    </section>
+
+    <section class="control-card" aria-label="路线分段说明">
+      <div class="segment" role="tablist" aria-label="选择路线分段">
+        <button type="button" role="tab" data-stop="all" aria-selected="true" onclick="selectStop('all')">路线总览</button>
+        <button type="button" role="tab" data-stop="hangzhou" aria-selected="false" onclick="selectStop('hangzhou')">杭州</button>
+        <button type="button" role="tab" data-stop="ningbo" aria-selected="false" onclick="selectStop('ningbo')">宁波 · 人文</button>
+        <button type="button" role="tab" data-stop="wenzhou" aria-selected="false" onclick="selectStop('wenzhou')">温州 · 烟火</button>
+        <button type="button" role="tab" data-stop="cangnan" aria-selected="false" onclick="selectStop('cangnan')">苍南 · 海岸</button>
+        <button type="button" role="tab" data-stop="jinyun" aria-selected="false" onclick="selectStop('jinyun')">缙云 · 山水</button>
+      </div>
+      <div class="detail" aria-live="polite">
+        <div>
+          <h2 id="detail-title">一圈不赶路：四段体验，五晚住宿</h2>
+          <p id="detail-copy">宁波连续住两晚承担“人文和博物馆”；温州留给江岛、老城与小吃；苍南只开168北部一小段，在炎亭看海吃海鲜；最后用不登山的仙都山水收尾。9月30日返杭，避开10月1日才回程。</p>
+          <div class="tags" id="detail-tags"></div>
+        </div>
+        <aside class="detail-side">
+          <h3 id="side-title">住宿分配</h3>
+          <p id="side-copy">宁波2晚｜温州1晚｜炎亭1晚｜缙云1晚</p>
+          <nav class="navlinks" id="nav-links" aria-label="地图导航入口"></nav>
+        </aside>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="路线关键约束">
+      <div class="fact"><strong>山</strong><span>仙都走接驳＋平缓观景线，不登步虚山、不冲顶。</span></div>
+      <div class="fact"><strong>海</strong><span>苍南168只体验崇家岙—炎亭—海口一段，留时间玩沙滩。</span></div>
+      <div class="fact"><strong>人文</strong><span>天一阁、宁波博物馆、温州老城、仙都摩崖题记。</span></div>
+      <div class="fact"><strong>美食</strong><span>宁波菜、温州早餐与小吃、炎亭海鲜、缙云烧饼。</span></div>
+    </section>
+
+    <footer>
+      车程为常态约数，其中炎亭→缙云约3.5小时，是全程最长一段。9月25—27日为中秋假期；景区预约、江心屿轮渡、沿海道路和天气，请在出发前48小时复核。参考入口：
+      <a href="https://www.nbmuseum.cn/" target="_blank" rel="noreferrer">宁波博物院</a>、
+      <a href="https://www.tianyige.com.cn/" target="_blank" rel="noreferrer">天一阁博物院</a>、
+      <a href="https://wl.wenzhou.gov.cn/art/2018/5/25/art_1653509_34537278.html" target="_blank" rel="noreferrer">江心屿</a>、
+      <a href="https://www.cncn.gov.cn/art/2025/1/15/art_1255449_59079806.html" target="_blank" rel="noreferrer">苍南168</a>、
+      <a href="https://www.zgxdly.cn/" target="_blank" rel="noreferrer">仙都景区</a>。
+    </footer>
+  </main>
+
+  <script>
+    const stops = {
+      all:{
+        title:'一圈不赶路：四段体验，五晚住宿',
+        copy:'宁波连续住两晚承担“人文和博物馆”；温州留给江岛、老城与小吃；苍南只开168北部一小段，在炎亭看海吃海鲜；最后用不登山的仙都山水收尾。9月30日返杭，避开10月1日才回程。',
+        tags:['6天5晚','9岁亲子','不去临海古城墙','不去国清寺','不去温州博物馆'],
+        sideTitle:'住宿分配',sideCopy:'宁波2晚｜温州1晚｜炎亭1晚｜缙云1晚',links:[]
+      },
+      hangzhou:{
+        title:'杭州：只作起点和终点',
+        copy:'9月25日上午直接向东去宁波，不在杭州安排景点；9月30日从缙云返杭。最后一天睡醒再走，午餐可在缙云解决。',
+        tags:['D1出发','D6返程','不在杭州游玩'],
+        sideTitle:'驾驶',sideCopy:'杭州→宁波约2小时；缙云→杭州约3小时。',
+        links:[['杭州','杭州']]
+      },
+      ningbo:{
+        title:'宁波：人文主场，连续住2晚',
+        copy:'D1到达后走天一阁＋月湖，节奏松；D2上午到东钱湖韩岭，下午把宁波博物馆作为全程唯一重点博物馆。孩子能看建筑、港城历史与互动展，不必堆更多馆。',
+        tags:['天一阁','月湖','东钱湖韩岭','宁波博物馆','宁波汤圆','面结面'],
+        sideTitle:'推荐落脚',sideCopy:'住天一广场/月湖一带，D1步行方便；D2自驾东钱湖。',
+        links:[['天一阁博物院','宁波'],['宁波博物院','宁波'],['韩岭老街','宁波']]
+      },
+      wenzhou:{
+        title:'温州：江岛、老城和本地早餐',
+        copy:'D3从宁波南下，下午按天气选择江心屿，傍晚走公园路—五马街。这里不再排温州博物馆，把时间留给糯米饭、鱼丸、灯盏糕和老城散步。',
+        tags:['江心屿','公园路','五马街','糯米饭','鱼丸','灯盏糕'],
+        sideTitle:'亲子节奏',sideCopy:'轮渡本身有趣；如风浪停航，就只逛老城、早点回酒店。',
+        links:[['江心屿','温州'],['五马街','温州'],['公园路历史文化街区','温州']]
+      },
+      cangnan:{
+        title:'苍南：168只开一段，海边慢下来',
+        copy:'D4吃完温州早餐再出发，从崇家岙进入168北段，依次体验龙台背、炎亭，体力和时间允许再到海口村。核心不是里程，而是观景台、沙滩日落和一顿当日海鲜。',
+        tags:['崇家岙','龙台背','炎亭沙滩','海口村','梭子蟹','当日海鲜'],
+        sideTitle:'短段原则',sideCopy:'边开边停约半天；不刷完整168，不再南下霞关和渔寮。',
+        links:[['崇家岙村','苍南'],['龙台背','苍南'],['炎亭景区','苍南'],['海口村','苍南']]
+      },
+      jinyun:{
+        title:'缙云仙都：有山水，但不需要爬山',
+        copy:'D5抵达后坐景区接驳，走朱潭山观景位、鼎湖峰外围和倪翁洞摩崖题记。主要是溪边、田野、石峰与人文石刻；不登步虚山，也不安排登顶。',
+        tags:['朱潭山','鼎湖峰外围','倪翁洞','摩崖题记','缙云烧饼','土爽面'],
+        sideTitle:'体力控制',sideCopy:'接驳车串点，按孩子状态删减；雨天优先倪翁洞与近距离观景。',
+        links:[['仙都景区游客中心','缙云'],['朱潭山','缙云'],['鼎湖峰','缙云'],['倪翁洞','缙云']]
+      }
+    };
+
+    function amap(name,city){return `https://uri.amap.com/search?keyword=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}&callnative=1`;}
+    function selectStop(key){
+      const data=stops[key]||stops.all;
+      document.querySelectorAll('[data-stop]').forEach(btn=>btn.setAttribute('aria-selected',String(btn.dataset.stop===key)));
+      document.getElementById('detail-title').textContent=data.title;
+      document.getElementById('detail-copy').textContent=data.copy;
+      document.getElementById('side-title').textContent=data.sideTitle;
+      document.getElementById('side-copy').textContent=data.sideCopy;
+      document.getElementById('detail-tags').innerHTML=data.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+      document.getElementById('nav-links').innerHTML=data.links.map(([name,city])=>`<a href="${amap(name,city)}" target="_blank" rel="noreferrer">高德 · ${name}</a>`).join('');
+      document.querySelector('.control-card').scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    selectStop('all');
+  </script>
+</body>
+</html>
