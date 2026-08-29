@@ -50,10 +50,18 @@
     .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
     .fact{padding:18px;border-radius:18px;background:var(--card);border:1px solid #e2e9e3}
     .fact strong{display:block;font-size:19px;margin-bottom:5px}.fact span{font-size:13px;color:var(--muted);line-height:1.55}
+    .hotels{margin-top:22px;padding:18px;border-radius:18px;background:linear-gradient(160deg,rgba(31,109,120,.07),rgba(248,245,237,.8));border:1px solid #dbe4de}
+    .hotels h2{margin:0 0 4px;font-size:clamp(20px,2vw,28px)}
+    .note{color:#6f5f2b;background:#fff7df;border:1px dashed #e2c990;padding:10px;border-radius:10px;margin-top:10px;font-size:13px}
+    .hotel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    .hotel{padding:14px;border-radius:14px;background:#fff;border:1px solid #e3ece6;line-height:1.6}
+    .hotel strong{font-size:15px}
+    .hotel .city{font-size:13px;color:var(--muted)}
+    .hotel ul{margin:8px 0 0 18px;padding:0;color:var(--muted);font-size:13px;line-height:1.7}
     footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7}
     footer a{color:var(--teal)}
     @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
-    @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
+    @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.hotel-grid{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
     @media print{body{background:#fff}.page{padding:0}.header-actions,.notice,.control-card,.facts,footer{display:none}.map-shell{box-shadow:none;border-radius:0}}
   </style>
 </head>
@@ -110,6 +118,49 @@
       <div class="fact"><strong>海</strong><span>苍南168只体验崇家岙—炎亭—海口一段，留时间玩沙滩。</span></div>
       <div class="fact"><strong>人文</strong><span>天一阁、宁波博物馆、温州老城、仙都摩崖题记。</span></div>
       <div class="fact"><strong>美食</strong><span>宁波菜、温州早餐与小吃、炎亭海鲜、缙云烧饼。</span></div>
+    </section>
+
+    <section class="hotels" aria-label="酒店建议">
+      <h2>酒店建议（4星以上，含亚朵/桔子）</h2>
+      <p class="note">预算以每晚<strong>400元左右</strong>为目标，按节前客流请以携程/飞猪/去哪儿实时价格核实；可退改与到店押金条款更友好。</p>
+      <div class="hotel-grid">
+        <article class="hotel">
+          <strong>宁波（2晚）</strong>
+          <p class="city">宁波站点和天一/月湖周边优先</p>
+          <ul>
+            <li>亚朵宁波天一阁/鼓楼附近</li>
+            <li>桔子酒店宁波南站/东部新城</li>
+            <li>预算波动时也可看同品牌低档房型</li>
+          </ul>
+        </article>
+        <article class="hotel">
+          <strong>温州（1晚）</strong>
+          <p class="city">更重视晚间回店和早餐安排</p>
+          <ul>
+            <li>桔子酒店温州南站/城北线</li>
+            <li>亚朵温州火车站/鹿城临近</li>
+            <li>可选同城同标准商务型做对比</li>
+          </ul>
+        </article>
+        <article class="hotel">
+          <strong>苍南·炎亭（1晚）</strong>
+          <p class="city">你可选更高端版：希尔顿逸林（偏贵）</p>
+          <ul>
+            <li>温馨提示：炎亭/三灶周边有短程接驳，别贪远</li>
+            <li>预算优先：希尔顿逸林约可能高于400，需看房型</li>
+            <li>预算紧张可找同等品质海岸侧小型酒店</li>
+          </ul>
+        </article>
+        <article class="hotel">
+          <strong>缙云（1晚）</strong>
+          <p class="city">夜里离景区远近和第二天接驳</p>
+          <ul>
+            <li>缙云县城 4星+ 酒店为主</li>
+            <li>优先选离县城主路近、含早餐</li>
+            <li>若行程缩短可考虑连住 1 间退改更强</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <footer>
