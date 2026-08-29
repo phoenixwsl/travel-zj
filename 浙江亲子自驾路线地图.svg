@@ -116,7 +116,6 @@
       <rect width="267" height="91" rx="18" fill="#fff" opacity="0.97"/>
       <text x="18" y="29" class="place">宁波 · 住2晚</text>
       <text x="18" y="55" class="poi">天一阁＋月湖｜东钱湖韩岭</text>
-      <text x="18" y="76" class="poi">宁波博物馆（亲子主馆）</text>
     </g>
     <circle cx="857" cy="214" r="5" fill="#183a40"/>
     <circle cx="885" cy="228" r="5" fill="#183a40"/>
@@ -132,7 +131,6 @@
       <text x="18" y="29" class="place">温州 · 住1晚</text>
       <text x="18" y="55" class="poi">江心屿＋公园路/五马街</text>
       <text x="18" y="77" class="poi">糯米饭 · 鱼丸 · 灯盏糕</text>
-      <text x="18" y="96" class="tiny" fill="#c05d47">不排温州博物馆</text>
     </g>
 
     <!-- Cangnan -->
@@ -203,7 +201,7 @@
     <g transform="translate(28 188)">
       <circle cx="18" cy="22" r="18" fill="#e6aa52"/><text x="18" y="28" text-anchor="middle" font-size="14" font-weight="800">D2</text>
       <text x="54" y="18" class="dayTitle">9/26 宁波不挪窝</text>
-      <text x="54" y="42" class="dayText">东钱湖韩岭＋宁波博物馆</text>
+      <text x="54" y="42" class="dayText">东钱湖韩岭＋天一阁</text>
       <rect x="318" y="5" width="73" height="28" rx="14" fill="#fff1d9"/><text x="354" y="24" text-anchor="middle" class="tiny" font-weight="700">住宁波</text>
     </g>
     <g transform="translate(28 281)">
@@ -233,10 +231,10 @@
 
     <g transform="translate(28 686)">
       <rect width="392" height="105" rx="20" fill="#f1f5ef"/>
-      <text x="18" y="28" font-size="15" font-weight="800">这条线为什么适合“休闲游”</text>
-      <text x="18" y="54" class="tiny">宁波连续住2晚；不去临海古城墙、国清寺；</text>
-      <text x="18" y="75" class="tiny">温州不排博物馆；168只体验北段；仙都不爬山。</text>
-      <text x="18" y="96" class="tiny" fill="#d05e47">9/25–27为中秋假期，热门点需提前预约。</text>
+      <text x="18" y="22" font-size="15" font-weight="800">行驶里程（参考）</text>
+      <text x="18" y="47" class="tiny">杭→宁波 155km；宁波→温州 240km；温州→炎亭 160km；</text>
+      <text x="18" y="67" class="tiny">炎亭→缙云 260km；缙云→杭 170km；主线约885km。</text>
+      <text x="18" y="88" class="tiny">含景点间短途和机动后约950-1000km；净开车时长约11.5-12.5h。</text>
     </g>
   </g>
 
