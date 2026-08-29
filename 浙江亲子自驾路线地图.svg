@@ -89,12 +89,12 @@
     <path class="route" d="M457 750 C382 678 294 560 221 457"/>
     <path class="route" d="M221 457 C194 338 191 206 210 96"/>
 
-    <!-- drive time chips -->
-    <g transform="translate(516 68)"><rect width="78" height="29" rx="14" fill="#fff"/><text x="39" y="20" text-anchor="middle" class="tiny" font-weight="700">约 2h</text></g>
-    <g transform="translate(680 374)"><rect width="78" height="29" rx="14" fill="#fff"/><text x="39" y="20" text-anchor="middle" class="tiny" font-weight="700">约 3h</text></g>
-    <g transform="translate(488 670)"><rect width="92" height="29" rx="14" fill="#fff"/><text x="46" y="20" text-anchor="middle" class="tiny" font-weight="700">约 1.5h</text></g>
-    <g transform="translate(269 623)"><rect width="164" height="31" rx="15" fill="#fff" stroke="#ef6f55" stroke-width="1.5"/><text x="82" y="21" text-anchor="middle" class="tiny" font-weight="700" fill="#d65a42">约 3.5h · 最长一段</text></g>
-    <g transform="translate(148 274)"><rect width="78" height="29" rx="14" fill="#fff"/><text x="39" y="20" text-anchor="middle" class="tiny" font-weight="700">约 3h</text></g>
+    <!-- route distance labels -->
+    <g transform="translate(498 68)" aria-label="杭→宁波 155km，约2h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">155km · 约2h</text></g>
+    <g transform="translate(666 374)" aria-label="宁波→温州 240km，约2.5h"><rect width="132" height="29" rx="14" fill="#fff"/><text x="66" y="20" text-anchor="middle" class="tiny" font-weight="700">240km · 约2.5h</text></g>
+    <g transform="translate(482 670)" aria-label="温州→炎亭 160km，约2h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">160km · 约2h</text></g>
+    <g transform="translate(286 623)" aria-label="炎亭→缙云 260km，约3.5h"><rect width="132" height="29" rx="14" fill="#fff" stroke="#ef6f55" stroke-width="1.5"/><text x="66" y="20" text-anchor="middle" class="tiny" font-weight="700" fill="#d65a42">260km · 约3.5h</text></g>
+    <g transform="translate(128 274)" aria-label="缙云→杭 170km，约3h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">170km · 约3h</text></g>
 
     <!-- Hangzhou -->
     <g transform="translate(210 96)" filter="url(#soft)">
@@ -229,13 +229,6 @@
       <rect x="306" y="5" width="85" height="28" rx="14" fill="#e3eef0"/><text x="348" y="24" text-anchor="middle" class="tiny" font-weight="700">回杭州</text>
     </g>
 
-    <g transform="translate(28 686)">
-      <rect width="392" height="105" rx="20" fill="#f1f5ef"/>
-      <text x="18" y="22" font-size="15" font-weight="800">行驶里程（参考）</text>
-      <text x="18" y="47" class="tiny">杭→宁波 155km；宁波→温州 240km；温州→炎亭 160km；</text>
-      <text x="18" y="67" class="tiny">炎亭→缙云 260km；缙云→杭 170km；主线约885km。</text>
-      <text x="18" y="88" class="tiny">含景点间短途和机动后约950-1000km；净开车时长约11.5-12.5h。</text>
-    </g>
   </g>
 
   <text x="56" y="978" class="tiny muted">示意图不替代导航。车程为常态约数；沿海天气、道路施工、轮渡与景区开放，以出发前48小时实时信息为准。</text>

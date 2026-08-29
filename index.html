@@ -27,11 +27,6 @@
     .notice b{white-space:nowrap}
     .map-shell{position:relative;overflow:hidden;border-radius:26px;background:#fff;box-shadow:var(--shadow);aspect-ratio:16/10}
     .map-shell>img{display:block;width:100%;height:100%;object-fit:contain;background:#f5f4ed}
-    .map-distance{position:absolute;left:14px;right:14px;bottom:14px;padding:10px 12px;border-radius:12px;background:rgba(255,254,248,.94);border:1px solid #dce6df;backdrop-filter:blur(4px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;box-shadow:0 8px 22px rgba(24,58,64,.08);z-index:2;pointer-events:none}
-    .map-distance strong{display:block;font-size:13px}
-    .map-distance span{font-size:12px;color:var(--muted);display:inline-block}
-    .map-distance .total{grid-column:1/-1;font-size:12px;color:#4f6769}
-    .map-distance p{margin:0;line-height:1.5}
     .hotspot{position:absolute;width:clamp(30px,3.5vw,55px);height:clamp(30px,3.5vw,55px);margin:calc(clamp(30px,3.5vw,55px)/-2);border:0;border-radius:50%;background:transparent;cursor:pointer;outline-offset:4px}
     .hotspot:focus-visible{outline:4px solid #fff;box-shadow:0 0 0 7px var(--coral)}
     .hotspot::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,5px);white-space:nowrap;padding:7px 10px;border-radius:9px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.18s ease}
@@ -73,7 +68,7 @@
     .hotel ul{margin:8px 0 0 18px;padding:0;color:var(--muted);font-size:13px;line-height:1.7}
     footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7}
     footer a{color:var(--teal)}
-    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.map-distance{grid-template-columns:1fr;left:8px;right:8px;bottom:8px}.control-card{width:100%;border-radius:0 0 18px 18px}}
+    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
     @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.days{grid-template-columns:1fr}.hotel-grid{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
     @media print{body{background:#fff}.page{padding:0}.header-actions,.notice,.control-card,.facts,footer{display:none}.map-shell{box-shadow:none;border-radius:0}}
   </style>
@@ -101,14 +96,6 @@
       <button class="hotspot h-wz" data-tip="温州·1晚" aria-label="查看温州行程" onclick="selectStop('wenzhou')"></button>
       <button class="hotspot h-cn" data-tip="苍南168·1晚" aria-label="查看苍南168行程" onclick="selectStop('cangnan')"></button>
       <button class="hotspot h-jy" data-tip="缙云仙都·1晚" aria-label="查看缙云仙都行程" onclick="selectStop('jinyun')"></button>
-      <div class="map-distance" aria-label="里程参考">
-        <p><strong>杭→宁波：</strong><span>约155km，约2h</span></p>
-        <p><strong>宁波→温州：</strong><span>约240km，约2.5h</span></p>
-        <p><strong>温州→炎亭：</strong><span>约160km，约2h（沿浙南168北段）</span></p>
-        <p><strong>炎亭→缙云：</strong><span>约260km，约3.5h</span></p>
-        <p><strong>缙云→杭州：</strong><span>约170km，约3h</span></p>
-        <p class="total"><strong>里程参考：</strong><span>主线约885km；含景点间短途后约950-1000km；净开车时长约11.5-12.5h。</span></p>
-      </div>
     </section>
 
     <section class="control-card" aria-label="路线分段说明">
