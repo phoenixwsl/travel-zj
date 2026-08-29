@@ -4,337 +4,120 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>浙江亲子自驾路线地图｜山海人文美食游</title>
+  <title>浙江亲子自驾路线地图｜8天7晚山海人文美食游</title>
   <style>
-    :root{
-      --ink:#183a40;--muted:#687d7e;--paper:#f8f5ed;--card:#fffdf8;
-      --teal:#1f6d78;--coral:#ef6f55;--gold:#e6aa52;--green:#76956b;
-      --line:#dce6df;--shadow:0 18px 55px rgba(28,61,65,.13)
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    :root{--ink:#183a40;--muted:#687d7e;--paper:#f8f5ed;--card:#fffdf8;--teal:#1f6d78;--coral:#ef6f55;--gold:#e6aa52;--green:#76956b;--line:#dce6df;--shadow:0 18px 55px rgba(28,61,65,.13)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{margin:0;background:radial-gradient(circle at 6% 0,#f8e8ca 0,transparent 24rem),linear-gradient(135deg,#fbf8f1,#eef4ef);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}
-    a{color:inherit}
-    .page{width:min(1680px,100%);margin:auto;padding:28px clamp(14px,3vw,46px) 50px}
+    a{color:inherit}.page{width:min(1680px,100%);margin:auto;padding:28px clamp(14px,3vw,46px) 50px}
     header{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:4px 0 18px}
     h1{font-size:clamp(27px,3vw,44px);line-height:1.15;margin:0 0 8px;letter-spacing:.02em}
     .subtitle{margin:0;color:var(--muted);font-size:clamp(14px,1.4vw,18px)}
-    .header-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .button,.segment button{border:1px solid transparent;border-radius:999px;padding:10px 16px;background:#fff;color:var(--ink);font:inherit;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 16px rgba(28,61,65,.07);transition:.2s ease}
     .button:hover,.segment button:hover{transform:translateY(-1px);box-shadow:0 7px 20px rgba(28,61,65,.12)}
     .button.primary{background:var(--ink);color:#fff}
     .notice{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:11px 15px;border:1px solid #e2c990;border-radius:14px;background:#fff7df;color:#6a5729;font-size:14px}
-    .notice b{white-space:nowrap}
-    .map-shell{position:relative;overflow:hidden;border-radius:26px;background:#fff;box-shadow:var(--shadow);aspect-ratio:16/10}
+    .notice b{white-space:nowrap}.map-shell{position:relative;overflow:hidden;border-radius:26px;background:#fff;box-shadow:var(--shadow);aspect-ratio:16/10}
     .map-shell>img{display:block;width:100%;height:100%;object-fit:contain;background:#f5f4ed}
     .hotspot{position:absolute;width:clamp(30px,3.5vw,55px);height:clamp(30px,3.5vw,55px);margin:calc(clamp(30px,3.5vw,55px)/-2);border:0;border-radius:50%;background:transparent;cursor:pointer;outline-offset:4px}
     .hotspot:focus-visible{outline:4px solid #fff;box-shadow:0 0 0 7px var(--coral)}
     .hotspot::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,5px);white-space:nowrap;padding:7px 10px;border-radius:9px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.18s ease}
     .hotspot:hover::after,.hotspot:focus-visible::after{opacity:1;transform:translate(-50%,0)}
-    .h-hz{left:15.75%;top:22.1%}.h-nb{left:57.3%;top:33%}.h-wz{left:32.6%;top:73.2%}.h-cn{left:31.2%;top:87.5%}.h-jy{left:16.45%;top:58.2%}
+    .h-hz{left:15.5%;top:21%}.h-nb{left:57.2%;top:32%}.h-wz{left:32.1%;top:71%}.h-cn{left:30.7%;top:86%}.h-jy{left:16.6%;top:57%}.h-sy{left:15.5%;top:68%}.h-qz{left:9.3%;top:48%}
     .control-card{position:relative;margin:-6px auto 0;width:calc(100% - 30px);padding:18px;border-radius:0 0 24px 24px;background:rgba(255,253,248,.96);box-shadow:var(--shadow);backdrop-filter:blur(16px)}
     .segment{display:flex;gap:8px;overflow:auto;padding:2px 2px 12px;scrollbar-width:thin}
     .segment button{box-shadow:none;border-color:#dbe5df;background:#fff;white-space:nowrap;padding:8px 14px}
     .segment button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
     .detail{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.85fr);gap:22px;padding:18px 5px 5px;border-top:1px solid var(--line)}
-    .detail h2{margin:0 0 9px;font-size:clamp(21px,2vw,29px)}
-    .detail p{margin:0;color:#50696b;line-height:1.75}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-    .tag{padding:7px 11px;border-radius:999px;background:#ecf3ef;color:#365955;font-size:13px;font-weight:700}
-    .detail-side{padding:15px 17px;border-radius:18px;background:#f1f5ef}
-    .detail-side h3{font-size:15px;margin:0 0 8px}
-    .detail-side p{font-size:14px;line-height:1.65}
-    .navlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .navlinks a{padding:8px 11px;border-radius:10px;background:#fff;color:var(--teal);font-size:13px;font-weight:750;text-decoration:none;border:1px solid #d8e4df}
-    .navlinks a:hover{border-color:var(--teal)}
-    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
-    .fact{padding:18px;border-radius:18px;background:var(--card);border:1px solid #e2e9e3}
+    .detail h2{margin:0 0 9px;font-size:clamp(21px,2vw,29px)}.detail p{margin:0;color:#50696b;line-height:1.75}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.tag{padding:7px 11px;border-radius:999px;background:#ecf3ef;color:#365955;font-size:13px;font-weight:700}
+    .detail-side{padding:15px 17px;border-radius:18px;background:#f1f5ef}.detail-side h3{font-size:15px;margin:0 0 8px}.detail-side p{font-size:14px;line-height:1.65}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.navlinks a{padding:8px 11px;border-radius:10px;background:#fff;color:var(--teal);font-size:13px;font-weight:750;text-decoration:none;border:1px solid #d8e4df}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.fact{padding:18px;border-radius:18px;background:var(--card);border:1px solid #e2e9e3}
     .fact strong{display:block;font-size:19px;margin-bottom:5px}.fact span{font-size:13px;color:var(--muted);line-height:1.55}
-    .itinerary{margin-top:22px;padding:18px;border-radius:18px;background:#fffefe;border:1px solid #e1e9e2}
-    .itinerary h2{margin:0 0 8px;font-size:clamp(20px,2vw,28px)}
-    .compact-schedule{list-style:none;padding:0;margin:12px 0 0 0;display:grid;gap:9px}
-    .compact-schedule li{padding:11px 13px;border:1px solid #dfebe4;border-radius:12px;background:#f7fbf8;line-height:1.65;color:var(--muted);font-size:13px}
-    .days{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
-    .day{padding:14px;border-radius:14px;border:1px solid #e3ece6;background:#fff}
-    .day strong{display:block;margin-bottom:6px;font-size:15px}
+    .itinerary,.hotels{margin-top:22px;padding:18px;border-radius:18px;background:#fffefe;border:1px solid #e1e9e2}.itinerary h2,.hotels h2{margin:0 0 8px;font-size:clamp(20px,2vw,28px)}
+    .days{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}.day{padding:14px;border-radius:14px;border:1px solid #e3ece6;background:#fff}.day strong{display:block;margin-bottom:6px;font-size:15px}
     .time-list{margin:0;padding-left:16px;color:var(--muted);font-size:13px;line-height:1.7}
-    .hotels{margin-top:22px;padding:18px;border-radius:18px;background:linear-gradient(160deg,rgba(31,109,120,.07),rgba(248,245,237,.8));border:1px solid #dbe4de}
-    .hotels h2{margin:0 0 4px;font-size:clamp(20px,2vw,28px)}
-    .note{color:#6f5f2b;background:#fff7df;border:1px dashed #e2c990;padding:10px;border-radius:10px;margin-top:10px;font-size:13px}
-    .hotel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-    .hotel{padding:14px;border-radius:14px;background:#fff;border:1px solid #e3ece6;line-height:1.6}
-    .hotel strong{font-size:15px}
-    .hotel .city{font-size:13px;color:var(--muted)}
-    .hotel ul{margin:8px 0 0 18px;padding:0;color:var(--muted);font-size:13px;line-height:1.7}
-    footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7}
-    footer a{color:var(--teal)}
-    @media(max-width:840px){header{display:block}.header-actions{justify-content:flex-start;margin-top:14px}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.notice{align-items:flex-start}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
-    @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.days{grid-template-columns:1fr}.hotel-grid{grid-template-columns:1fr 1fr}.fact{padding:13px}.header-actions .button{padding:8px 12px}.hotspot::after{display:none}}
-    @media print{body{background:#fff}.page{padding:0}.header-actions,.notice,.control-card,.facts,footer{display:none}.map-shell{box-shadow:none;border-radius:0}}
+    .compact-schedule{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:9px}.compact-schedule li{padding:11px 13px;border:1px solid #dfebe4;border-radius:12px;background:#f7fbf8;line-height:1.65;color:var(--muted);font-size:13px}
+    .hotels{background:linear-gradient(160deg,rgba(31,109,120,.07),rgba(248,245,237,.8));border-color:#dbe4de}.note{color:#6f5f2b;background:#fff7df;border:1px dashed #e2c990;padding:10px;border-radius:10px;margin-top:10px;font-size:13px}
+    .hotel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.hotel{padding:14px;border-radius:14px;background:#fff;border:1px solid #e3ece6;line-height:1.6}.hotel strong{font-size:15px}.hotel .city{font-size:13px;color:var(--muted)}.hotel ul{margin:8px 0 0 18px;padding:0;color:var(--muted);font-size:13px;line-height:1.7}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.7} footer a{color:var(--teal)}
+    @media(max-width:840px){header{display:block}.detail{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.map-shell{border-radius:18px}.control-card{width:100%;border-radius:0 0 18px 18px}}
+    @media(max-width:520px){.page{padding-inline:9px}.facts{grid-template-columns:1fr 1fr}.days{grid-template-columns:1fr}.hotel-grid{grid-template-columns:1fr 1fr}.fact{padding:13px}.hotspot::after{display:none}}
+    @media print{body{background:#fff}.page{padding:0}.notice,.control-card,.facts,footer,.button{display:none}.map-shell{box-shadow:none;border-radius:0}}
   </style>
 </head>
 <body>
-  <main class="page">
-    <header>
-      <div>
-        <h1>浙江亲子自驾 · 山海人文美食游</h1>
-        <p class="subtitle">6天5晚｜2026年9月25—30日｜杭州—宁波—温州—苍南炎亭—缙云仙都—杭州</p>
-      </div>
-      <div class="header-actions">
-        <a class="button" href="./浙江亲子自驾路线地图.png" download>下载 PNG</a>
-        <a class="button" href="./浙江亲子自驾路线地图.svg" download>下载 SVG</a>
-        <button class="button primary" type="button" onclick="window.print()">打印 / 存PDF</button>
-      </div>
-    </header>
+<main class="page">
+  <header>
+    <div>
+      <h1>浙江亲子自驾 · 山海人文美食游</h1>
+      <p class="subtitle">8天7晚｜2026年9月25日—10月2日｜杭州—宁波—温州—苍南—缙云—松阳—衢州—杭州</p>
+    </div>
+    <button class="button primary" type="button" onclick="window.print()">打印 / 存PDF</button>
+  </header>
 
-    <div class="notice"><b>地图说明</b><span>点地图上的编号或下方城市，可看每段玩法与导航入口；路线是地理连线示意，实际行车以当天导航为准。</span></div>
+  <div class="notice"><b>国庆提醒</b><span>D7、D8 已进入 10月1—2日国庆假期，衢州老城、热门古村与返杭高速都要预留拥堵弹性；路线图仅作节奏参考，实际行车以当天导航为准。</span></div>
 
-    <section class="map-shell" aria-label="浙江亲子自驾路线地图">
-      <img src="./浙江亲子自驾路线地图.svg" alt="杭州经宁波、温州、苍南、缙云返回杭州的六天五晚路线地图">
-      <button class="hotspot h-hz" data-tip="杭州·起终点" aria-label="查看杭州起终点说明" onclick="selectStop('hangzhou')"></button>
-      <button class="hotspot h-nb" data-tip="宁波·2晚" aria-label="查看宁波行程" onclick="selectStop('ningbo')"></button>
-      <button class="hotspot h-wz" data-tip="温州·1晚" aria-label="查看温州行程" onclick="selectStop('wenzhou')"></button>
-      <button class="hotspot h-cn" data-tip="苍南168·1晚" aria-label="查看苍南168行程" onclick="selectStop('cangnan')"></button>
-      <button class="hotspot h-jy" data-tip="缙云仙都·1晚" aria-label="查看缙云仙都行程" onclick="selectStop('jinyun')"></button>
-    </section>
+  <section class="map-shell" aria-label="浙江亲子自驾路线地图">
+    <img src="./浙江亲子自驾路线地图.svg" alt="杭州经宁波、温州、苍南、缙云、松阳、衢州返回杭州的八天七晚路线地图">
+    <button class="hotspot h-hz" data-tip="杭州·起终点" aria-label="杭州" onclick="selectStop('hangzhou')"></button>
+    <button class="hotspot h-nb" data-tip="宁波·1晚" aria-label="宁波" onclick="selectStop('ningbo')"></button>
+    <button class="hotspot h-wz" data-tip="温州·2晚" aria-label="温州" onclick="selectStop('wenzhou')"></button>
+    <button class="hotspot h-cn" data-tip="苍南·1晚" aria-label="苍南" onclick="selectStop('cangnan')"></button>
+    <button class="hotspot h-jy" data-tip="缙云·1晚" aria-label="缙云" onclick="selectStop('jinyun')"></button>
+    <button class="hotspot h-sy" data-tip="松阳·1晚" aria-label="松阳" onclick="selectStop('songyang')"></button>
+    <button class="hotspot h-qz" data-tip="衢州·1晚" aria-label="衢州" onclick="selectStop('quzhou')"></button>
+  </section>
 
-    <section class="control-card" aria-label="路线分段说明">
-      <div class="segment" role="tablist" aria-label="选择路线分段">
-        <button type="button" role="tab" data-stop="all" aria-selected="true" onclick="selectStop('all')">路线总览</button>
-        <button type="button" role="tab" data-stop="hangzhou" aria-selected="false" onclick="selectStop('hangzhou')">杭州</button>
-        <button type="button" role="tab" data-stop="ningbo" aria-selected="false" onclick="selectStop('ningbo')">宁波 · 人文</button>
-        <button type="button" role="tab" data-stop="wenzhou" aria-selected="false" onclick="selectStop('wenzhou')">温州 · 烟火</button>
-        <button type="button" role="tab" data-stop="cangnan" aria-selected="false" onclick="selectStop('cangnan')">苍南 · 海岸</button>
-        <button type="button" role="tab" data-stop="jinyun" aria-selected="false" onclick="selectStop('jinyun')">缙云 · 山水</button>
-      </div>
-      <div class="detail" aria-live="polite">
-        <div>
-          <h2 id="detail-title">一圈不赶路：四段体验，五晚住宿</h2>
-          <p id="detail-copy">宁波连住2晚做人文+轻徒步：天一阁、宁波鼓楼、东湖/小加州、韩玲老街、老外滩夜景；温州留给江岛和老城小吃；苍南走168北段，夜宿炎亭。9月30日返杭，避开10月1日周一高峰。</p>
-          <div class="tags" id="detail-tags"></div>
-        </div>
-        <aside class="detail-side">
-          <h3 id="side-title">住宿分配</h3>
-          <p id="side-copy">宁波2晚｜温州1晚｜炎亭1晚｜缙云1晚</p>
-          <nav class="navlinks" id="nav-links" aria-label="地图导航入口"></nav>
-        </aside>
-      </div>
-    </section>
+  <section class="control-card">
+    <div class="segment" role="tablist">
+      <button role="tab" data-stop="all" aria-selected="true" onclick="selectStop('all')">路线总览</button>
+      <button role="tab" data-stop="ningbo" aria-selected="false" onclick="selectStop('ningbo')">宁波 · 人文</button>
+      <button role="tab" data-stop="wenzhou" aria-selected="false" onclick="selectStop('wenzhou')">温州 · 烟火</button>
+      <button role="tab" data-stop="cangnan" aria-selected="false" onclick="selectStop('cangnan')">苍南 · 海岸</button>
+      <button role="tab" data-stop="jinyun" aria-selected="false" onclick="selectStop('jinyun')">缙云 · 山水</button>
+      <button role="tab" data-stop="songyang" aria-selected="false" onclick="selectStop('songyang')">松阳 · 古村</button>
+      <button role="tab" data-stop="quzhou" aria-selected="false" onclick="selectStop('quzhou')">衢州 · 南孔</button>
+    </div>
+    <div class="detail" aria-live="polite">
+      <div><h2 id="detail-title"></h2><p id="detail-copy"></p><div class="tags" id="detail-tags"></div></div>
+      <aside class="detail-side"><h3 id="side-title"></h3><p id="side-copy"></p><nav class="navlinks" id="nav-links"></nav></aside>
+    </div>
+  </section>
 
-    <section class="facts" aria-label="路线关键约束">
-      <div class="fact"><strong>山</strong><span>仙都以接驳＋观景线为主，保留一条轻度登山选项（观景台线），不强求登顶。</span></div>
-      <div class="fact"><strong>海</strong><span>苍南“浙南168”北段（崇家岙—炎亭—海口）贯穿D4，留时间看海与日落。</span></div>
-      <div class="fact"><strong>人文</strong><span>天一阁、宁波鼓楼、东湖、小加州、韩玲老街、老外滩夜景、温州老城、仙都摩崖题记。</span></div>
-      <div class="fact"><strong>美食</strong><span>宁波菜、温州早餐与小吃、炎亭海鲜、缙云烧饼。</span></div>
-    </section>
+  <section class="facts">
+    <div class="fact"><strong>宁波压缩</strong><span>只住1晚；D2上午东钱湖/韩岭，午饭后约13:30—14:00直接开往温州。</span></div>
+    <div class="fact"><strong>丽水加深</strong><span>D6从仙都晨景转古堰画乡，再到松阳住一晚，后半程明显慢下来。</span></div>
+    <div class="fact"><strong>古村克制</strong><span>D7松阳最多选1—2个村，优先杨家堂/松庄；陈家铺视国庆客流再决定。</span></div>
+    <div class="fact"><strong>衢州收尾</strong><span>老城、美食、孔氏南宗家庙与博物馆，D8午饭后返杭州。</span></div>
+  </section>
 
-    <section class="itinerary" aria-label="每天时间线">
-      <h2>每天具体时间点</h2>
-      <div class="days">
-        <article class="day">
-          <strong>D1（9月25 日，周五）· 杭州→宁波（约155km，约2h）</strong>
-          <ul class="time-list">
-            <li>08:30 杭州出发（约155km，约2h），途中补给水和水果，尽量避开高峰。</li>
-            <li>09:00 餐1（早餐）：建议以酒店或沿途轻食补充，杭州版块不做美食定向推荐。</li>
-            <li>10:30 左右到达宁波，先做入住酒店。</li>
-            <li>12:00 餐2（午餐）：宁波汤圆、面结面、宁波小面，作为本地第一口。</li>
-            <li>14:30 天一阁与附近宁波鼓楼一站（天一阁可含馆内休息点），节奏偏轻松。</li>
-            <li>18:30 晚餐：宁波小馄饨/蒸饺，或汤粥+小食，吃得清淡不太膨胀。</li>
-            <li>19:30 想再走走可去老外滩沿线灯影，回程尽量在20:15-21:00完成回酒店。</li>
-          </ul>
-        </article>
+  <section class="itinerary">
+    <h2>每天具体时间点</h2>
+    <div class="days">
+      <article class="day"><strong>D1（9月25日，周五）· 杭州→宁波（约2h）</strong><ul class="time-list"><li>08:30 杭州出发，午前抵达宁波并入住。</li><li>12:00 宁波菜/面结面/汤圆，作为第一顿本地味道。</li><li>14:00—17:00 天一阁＋鼓楼/月湖片区，控制步行强度。</li><li>18:00 晚餐；19:30 若有体力去老外滩看夜景。</li></ul></article>
+      <article class="day"><strong>D2（9月26日，周六）· 宁波→温州（下午转场，约2.5h）</strong><ul class="time-list"><li>08:30 退房，去东钱湖；重点选湖景＋韩岭，不刷完整环湖。</li><li>09:30—11:30 东钱湖/韩岭慢走。</li><li>11:30—13:00 午饭。</li><li>13:30—14:00 出发去温州，傍晚入住。</li><li>18:30 温州第一顿：鱼丸、灯盏糕、糯米饭等。</li></ul></article>
+      <article class="day"><strong>D3（9月27日，周日）· 温州慢玩一天</strong><ul class="time-list"><li>09:00 江心屿，轮渡与天气不合适就直接改老城。</li><li>12:30 老城午饭，下午留午休。</li><li>15:30 公园路—五马街—老城区慢逛。</li><li>18:00 晚餐＋小吃，20:30左右结束。</li></ul></article>
+      <article class="day"><strong>D4（9月28日，周一）· 温州→苍南浙南168（约2h＋沿海慢开）</strong><ul class="time-list"><li>08:30 温州早餐后出发。</li><li>10:30 左右进入浙南168北段，按天气和体力边开边停。</li><li>午饭靠海解决，下午看崇家岙/龙台背/海口一线。</li><li>17:00 前后入住炎亭附近，晚上海鲜＋海边散步。</li></ul></article>
+      <article class="day"><strong>D5（9月29日，周二）· 苍南→缙云（约3.5h）</strong><ul class="time-list"><li>08:30 海边再停留一会儿，随后北上缙云。</li><li>中途服务区休息，避免连续驾驶。</li><li>14:00 前后到仙都，今天只走朱潭山/倪翁洞等轻松线。</li><li>18:00 缙云烧饼、土爽面，本地小菜；住仙都或缙云县城。</li></ul></article>
+      <article class="day"><strong>D6（9月30日，周三）· 缙云→古堰画乡→松阳（约2—3h分段）</strong><ul class="time-list"><li>07:30—09:30 仙都晨景，把前一天下午没走完的轻松点补掉。</li><li>10:00 出发去古堰画乡；中午在丽水方向吃饭。</li><li>12:30—15:30 古堰画乡：瓯江、古堰、古樟与村落慢走。</li><li>16:00 左右去松阳，傍晚逛松阳老街；住松阳。</li></ul></article>
+      <article class="day"><strong>D7（10月1日，周四）· 松阳→衢州（约2h，国庆首日）</strong><ul class="time-list"><li>08:00 早点出发去古村，优先杨家堂；状态好再加松庄，最多两个村。</li><li>陈家铺如果停车/换乘排队明显，直接放弃。</li><li>11:30 松阳午饭后向衢州转场。</li><li>15:00 左右抵达衢州，入住后逛水亭门/老城。</li><li>18:00 衢州菜：鸭头、兔头、鱼头等按家庭口味选辣度。</li></ul></article>
+      <article class="day"><strong>D8（10月2日，周五）· 衢州→杭州（约2.5h，需预留堵车）</strong><ul class="time-list"><li>08:30 孔氏南宗家庙＋衢州市博物馆，二选一或串联。</li><li>11:30 最后一顿衢州午饭。</li><li>13:00—14:00 之间尽早返杭，避开傍晚更重车流。</li><li>高速若拥堵明显，接受服务区休息和到家时间后移，不赶路。</li></ul></article>
+    </div>
+  </section>
 
-        <article class="day">
-          <strong>D2（9月26 日，周六）· 宁波本地人文（市内活动）</strong>
-          <ul class="time-list">
-            <li>08:30 当地出发活动（宁波市内往返，市区公里在20-30km内）。</li>
-            <li>09:00 宁波酒店早餐：宁波汤圆、粢饭、现炒面点（小份更友好）。</li>
-            <li>09:30 游东湖+小加州：先在东湖公园边缘停留，再去小加州湿地边线。</li>
-            <li>11:00 餐2（午餐）：前往东湖/韩岭片区餐厅尝宁波河鲜、糟香小吃、面结面。</li>
-            <li>14:30 韩岭老街（俗称韩玲老街）逛一圈，沿线轻徒步。</li>
-            <li>17:30 可在东湖/韩岭片区缓慢补充点心，避免孩子疲劳。</li>
-            <li>18:20 餐3（晚餐）：宁波炒年糕、酱鸭面、宁波汤圆。</li>
-            <li>19:30 若不累，可在南塘老街轻走 30-40 分钟，20:45 前结束，21:00 前回酒店。</li>
-          </ul>
-        </article>
+  <section class="itinerary"><h2>8天速览</h2><ul class="compact-schedule"><li><strong>D1 宁波：</strong>杭州→宁波；天一阁＋老城；住宁波。</li><li><strong>D2 温州：</strong>上午东钱湖/韩岭，午后直接去温州；住温州。</li><li><strong>D3 温州：</strong>江心屿＋老城＋温州小吃；继续住温州。</li><li><strong>D4 苍南：</strong>浙南168海岸线慢开；住炎亭/苍南海边。</li><li><strong>D5 缙云：</strong>苍南→仙都，下午轻徒步；住缙云。</li><li><strong>D6 松阳：</strong>仙都晨景→古堰画乡→松阳；住松阳。</li><li><strong>D7 衢州：</strong>松阳古村1—2个→衢州老城；住衢州。</li><li><strong>D8 返杭：</strong>南孔/博物馆→午饭→杭州；国庆车流留足弹性。</li></ul></section>
 
-        <article class="day">
-          <strong>D3（9月27 日，周日）· 宁波→温州（约240km，约2.5h）</strong>
-          <ul class="time-list">
-            <li>07:30 起床，08:00出发（约240km，约2.5h），防止中午车流高峰。</li>
-            <li>09:30 餐1（早餐）：到温州酒店退房前可先点温州小笼、温州粥面、蒸饺。</li>
-            <li>13:00 餐2（午餐）：温州老城优先温州鱼丸、温州粿条、米粥。</li>
-            <li>14:30 江心屿海岛观景。</li>
-            <li>17:30 公园路—五马街闲逛。</li>
-            <li>18:45 餐3（晚餐）：温州本地宵夜可选糯米饭、鱼丸汤、灯盏糕。</li>
-            <li>20:00-21:00 继续在公园路一带慢速逛一段，21:00前回酒店。</li>
-          </ul>
-        </article>
+  <section class="hotels"><h2>住宿建议</h2><p class="note">整体仍以交通方便、停车容易、可退改为先；9月30日以后进入国庆档，松阳和衢州建议尽早订。</p><div class="hotel-grid"><article class="hotel"><strong>宁波（1晚）</strong><p class="city">天一广场/老外滩附近</p><ul><li>D1步行方便</li><li>D2早上退房直奔东钱湖</li></ul></article><article class="hotel"><strong>温州（2晚）</strong><p class="city">鹿城老城或交通方便区域</p><ul><li>连住不换酒店</li><li>D3真正留完整一天给温州</li></ul></article><article class="hotel"><strong>苍南（1晚）＋缙云（1晚）</strong><p class="city">海边一晚，山水一晚</p><ul><li>苍南靠168短体验段</li><li>缙云优先仙都周边或县城</li></ul></article><article class="hotel"><strong>松阳（1晚）＋衢州（1晚）</strong><p class="city">后半程慢旅行</p><ul><li>松阳方便次日早去古村</li><li>衢州优先老城/水亭门附近</li></ul></article></div></section>
 
-        <article class="day">
-          <strong>D4（9月28 日，周一）· 温州→苍南（约160km，约2h）</strong>
-          <ul class="time-list">
-            <li>08:00 餐1（早餐）：温州蒸馍、米粥、鱼丸汤，轻量补给。</li>
-            <li>10:00 从温州出发上浙南168北段，约160km，10:30左右到崇家岙，继续向海边看景。</li>
-            <li>11:30 餐2（午餐）：海边简餐可选清淡海鲜饭、蒸鱼面或米饭套餐。</li>
-            <li>15:00 在浙南168上到海口村再回炎亭区，保留一段靠海视角。</li>
-            <li>17:00 酒店 check-in，餐3（晚餐）先吃当天鲜（梭子蟹、虾、扇贝）。</li>
-            <li>18:30 小范围海边散步，吹海风放松。</li>
-            <li>20:00-21:00 逛一圈炎亭夜巷和小店，早点回酒店。</li>
-          </ul>
-        </article>
-
-        <article class="day">
-          <strong>D5（9月29 日，周二）· 苍南→缙云（约260km，约3.5h）</strong>
-          <ul class="time-list">
-            <li>08:00 继续在炎亭看海后出发（约260km，约3.5h）。</li>
-            <li>10:30-11:00 餐1（早餐）：沿途可轻食补给，偏米粥或蒸饺。</li>
-            <li>11:30 左右到缙云县城办理入住，收拾后休息。</li>
-            <li>13:00 餐2（午餐）：景区或县城可点面食、米粉，少辣清爽。</li>
-            <li>14:00 仙都景区游客中心＋接驳，尽量早点进山。</li>
-            <li>14:30-16:30 倪翁洞、朱潭山外围和观景位深度走一轮（轻徒步为主；孩子状态允许可加一小段轻度登山观景）。</li>
-            <li>18:00 餐3（晚餐）：优先缙云烧饼、土爽面和本地小菜。</li>
-            <li>19:30 缙云县城慢走夜景，20:30 前回酒店，21:00前上床。</li>
-          </ul>
-        </article>
-
-        <article class="day">
-          <strong>D6（9月30 日，周三）· 缙云→杭州（约170km，约3h）</strong>
-          <ul class="time-list">
-            <li>08:00 仙都最后一站看景，不赶时间。</li>
-            <li>09:00 餐1（早餐）：缙云风格土爽面、热豆浆或米粥，退房前先补。</li>
-            <li>10:30 退房后先回县城补水休整。</li>
-            <li>16:00-17:00 返杭出发，路上不赶拍照。</li>
-            <li>19:00 左右到杭，可在城里休息整顿。</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="itinerary" aria-label="行程速览版">
-      <h2>每天精简时间点（速览版）</h2>
-      <ul class="compact-schedule">
-        <li><strong>D1（9月25）</strong> 08:30 杭州出发（≈155km、约2h）→ 10:30 到宁波入住；14:30 天一阁+宁波鼓楼；19:30 老外滩灯影；21:00 前到店休息。</li>
-        <li><strong>D2（9月26）</strong> 全天宁波市内逛点（里程约20-30km以内）；14:30 韩玲老街；19:30 南塘老街轻走；21:00 回酒店。</li>
-        <li><strong>D3（9月27）</strong> 08:00 出发去温州（≈240km、约2.5h）；13:00 江心屿；17:30 五马街/公园路；21:00 前回温州酒店。</li>
-        <li><strong>D4（9月28）</strong> 从温州出发到苍南北段（≈160km、约2h）；11:30 到崇家岙；15:00 海口村转炎亭；17:00 入住炎亭；20:00 夜巷轻步。</li>
-        <li><strong>D5（9月29）</strong> 08:00 炎亭出发（≈260km、约3.5h）；11:30 缙云入住；14:30-16:30 仙都绕景（轻徒步，孩子状态允许可轻度爬山）；19:30 缙云夜景。</li>
-        <li><strong>D6（9月30）</strong> 08:00 仙都最后补点；09:00 退房前早餐；16:00-17:00 返杭（≈170km、约3h）；19:00 左右到杭州。</li>
-      </ul>
-    </section>
-
-    <section class="hotels" aria-label="酒店建议">
-      <h2>酒店建议（4星以上，含亚朵/桔子）</h2>
-      <p class="note">预算以每晚<strong>400元左右</strong>为目标，按节前客流请以携程/飞猪/去哪儿实时价格核实；可退改与到店押金条款更友好。</p>
-      <div class="hotel-grid">
-        <article class="hotel">
-          <strong>宁波（2晚）</strong>
-          <p class="city">优先选天一广场或老外滩附近，D1步行距离最友好</p>
-          <ul>
-            <li>亚朵宁波天一阁/天一广场/老外滩一带</li>
-            <li>桔子酒店宁波天一广场/老外滩区</li>
-            <li>预算波动时也可看同品牌低档房型</li>
-          </ul>
-        </article>
-        <article class="hotel">
-          <strong>温州（1晚）</strong>
-          <p class="city">更重视晚间回店和早餐安排</p>
-          <ul>
-            <li>桔子酒店温州南站/城北线</li>
-            <li>亚朵温州火车站/鹿城临近</li>
-            <li>可选同城同标准商务型做对比</li>
-          </ul>
-        </article>
-        <article class="hotel">
-          <strong>苍南·炎亭（1晚）</strong>
-          <p class="city">你可选更高端版：希尔顿逸林（偏贵）</p>
-          <ul>
-            <li>温馨提示：炎亭/三灶周边有短程接驳，别贪远</li>
-            <li>预算优先：希尔顿逸林约可能高于400，需看房型</li>
-            <li>预算紧张可找同等品质海岸侧小型酒店</li>
-          </ul>
-        </article>
-        <article class="hotel">
-          <strong>缙云（1晚）</strong>
-          <p class="city">夜里离景区远近和第二天接驳</p>
-          <ul>
-            <li>缙云县城 4星+ 酒店为主</li>
-            <li>优先选离县城主路近、含早餐</li>
-            <li>若行程缩短可考虑连住 1 间退改更强</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <footer>
-      车程为常态约数，其中炎亭→缙云约3.5小时，是全程最长一段。9月25—27日为中秋假期；景区预约、江心屿轮渡、沿海道路和天气，请在出发前48小时复核。参考入口：
-      <a href="https://www.tianyige.com.cn/" target="_blank" rel="noreferrer">天一阁博物院</a>、
-      <a href="https://ditu.amap.com/place/B02F6Q5L2M" target="_blank" rel="noreferrer">宁波老外滩</a>、
-      <a href="https://wl.wenzhou.gov.cn/art/2018/5/25/art_1653509_34537278.html" target="_blank" rel="noreferrer">江心屿</a>、
-      <a href="https://www.cncn.gov.cn/art/2025/1/15/art_1255449_59079806.html" target="_blank" rel="noreferrer">苍南168</a>、
-      <a href="https://www.zgxdly.cn/" target="_blank" rel="noreferrer">仙都景区</a>。
-    </footer>
-  </main>
-
-  <script>
-    const stops = {
-      all:{
-        title:'一圈不赶路：四段体验，五晚住宿',
-        copy:'宁波连住2晚做人文+轻徒步：天一阁、宁波鼓楼、东湖/小加州、韩玲老街、老外滩夜景；温州留给江岛和老城小吃；苍南走168北段，夜宿炎亭。9月30日返杭，避开10月1日周一高峰。',
-        tags:['6天5晚','9岁亲子','宁波连住2晚','温州江心屿','苍南168'],
-        sideTitle:'住宿分配',sideCopy:'宁波2晚｜温州1晚｜炎亭1晚｜缙云1晚',links:[]
-      },
-      hangzhou:{
-        title:'杭州：只作起点和终点',
-        copy:'9月25日上午直接向东去宁波，不在杭州安排景点；9月30日从缙云返杭。最后一天睡醒再走，午餐可在缙云解决。',
-        tags:['D1出发','D6返程','不在杭州游玩'],
-        sideTitle:'驾驶',sideCopy:'杭州→宁波约2小时；缙云→杭州约3小时。',
-        links:[['杭州','杭州']]
-      },
-      ningbo:{
-        title:'宁波：人文主场，连续住2晚',
-        copy:'D1到达后先逛天一阁＋宁波鼓楼，晚间转老外滩灯影；D2白天串起东湖、再到小加州湿地边线，下午和傍晚在韩玲老街（韩岭老街）慢慢逛。节奏轻松，步行尽量控时。',
-        tags:['天一阁','宁波鼓楼','老外滩','东湖','小加州','韩玲老街','宁波汤圆','面结面'],
-        sideTitle:'推荐落脚',sideCopy:'住天一广场或老外滩附近，第一晚步行衔接更轻松。',
-        links:[['天一阁博物院','宁波'],['宁波鼓楼','宁波'],['老外滩','宁波'],['东湖公园','宁波'],['小加州','宁波'],['韩岭老街','宁波']]
-      },
-      wenzhou:{
-        title:'温州：江岛、老城和本地早餐',
-        copy:'D3从宁波南下，下午按天气选择江心屿，傍晚走公园路—五马街；晚上逛老城小吃、体验夜色步行。',
-        tags:['江心屿','公园路','五马街','糯米饭','鱼丸','灯盏糕'],
-        sideTitle:'亲子节奏',sideCopy:'轮渡本身有趣；如风浪停航，就只逛老城、早点回酒店。',
-        links:[['江心屿','温州'],['五马街','温州'],['公园路历史文化街区','温州']]
-      },
-      cangnan:{
-        title:'苍南：168只开一段，海边慢下来',
-        copy:'D4吃完温州早餐再出发，沿“浙南168”北段从崇家岙开到炎亭，再顺路到海口村，核心看海景和轻松散步，非冲里程。',
-        tags:['浙南168','崇家岙','龙台背','炎亭沙滩','海口村','梭子蟹','当日海鲜'],
-        sideTitle:'短段原则',sideCopy:'沿浙南168走 20-30km 北段；边开边停约半天，不刷完整线段。',
-        links:[['浙南168','苍南'],['崇家岙村','苍南'],['龙台背','苍南'],['炎亭景区','苍南'],['海口村','苍南']]
-      },
-      jinyun:{
-        title:'缙云仙都：有山水，可选轻度登山',
-        copy:'D5到达后可把上午到下午前段都留给仙都：朱潭山观景位、倪翁洞摩崖题记和溪边田野走线。景区以接驳＋近距观景为主，孩子状态允许可加一段短时间轻登山（观景台线），不冲顶；D6可晚些再返杭（16:00-17:00也行）。',
-        tags:['朱潭山','鼎湖峰外围','倪翁洞','摩崖题记','可选轻度登山','缙云烧饼','土爽面'],
-        sideTitle:'体力控制',sideCopy:'接驳车串点，按孩子状态删减；如想爬点山，优先选择短线且不陡峭路线。',
-        links:[['仙都景区游客中心','缙云'],['朱潭山','缙云'],['鼎湖峰','缙云'],['倪翁洞','缙云']]
-      }
-    };
-
-    function amap(name,city){return `https://uri.amap.com/search?keyword=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}&callnative=1`;}
-    function selectStop(key){
-      const data=stops[key]||stops.all;
-      document.querySelectorAll('[data-stop]').forEach(btn=>btn.setAttribute('aria-selected',String(btn.dataset.stop===key)));
-      document.getElementById('detail-title').textContent=data.title;
-      document.getElementById('detail-copy').textContent=data.copy;
-      document.getElementById('side-title').textContent=data.sideTitle;
-      document.getElementById('side-copy').textContent=data.sideCopy;
-      document.getElementById('detail-tags').innerHTML=data.tags.map(t=>`<span class="tag">${t}</span>`).join('');
-      document.getElementById('nav-links').innerHTML=data.links.map(([name,city])=>`<a href="${amap(name,city)}" target="_blank" rel="noreferrer">高德 · ${name}</a>`).join('');
-      document.querySelector('.control-card').scrollIntoView({behavior:'smooth',block:'nearest'});
-    }
-    selectStop('all');
-  </script>
+  <footer>这版路线的核心变化：宁波从2晚压到1晚，把新增两天给丽水/松阳与衢州。D5 苍南→缙云仍是最长转场；D7、D8进入国庆假期，古村停车、景区预约和返杭高速请在出发前48小时复核。</footer>
+</main>
+<script>
+const stops={all:{title:'8天7晚：前半程山海，后半程古村与人文',copy:'宁波只住1晚，D2下午直接去温州；温州完整玩一天后走苍南海岸。D5进入缙云仙都，D6把古堰画乡和松阳串起来，D7转衢州，D8午饭后返杭州。',tags:['8天7晚','宁波1晚','温州2晚','丽水慢游','松阳古村','衢州南孔'],sideTitle:'住宿分配',sideCopy:'宁波1｜温州2｜苍南1｜缙云1｜松阳1｜衢州1',links:[]},hangzhou:{title:'杭州：只作起终点',copy:'D1上午直接去宁波；D8从衢州返杭。最后一天正值国庆假期，返程不追求固定到家时间。',tags:['D1出发','D8返程'],sideTitle:'驾驶',sideCopy:'杭州→宁波约2小时；衢州→杭州约2.5小时，节假日按实时路况放大。',links:[['杭州','杭州']]},ningbo:{title:'宁波：压缩到1晚＋半天',copy:'D1天一阁与老城，晚上可去老外滩；D2上午只选东钱湖＋韩岭，午饭后约13:30—14:00出发去温州。',tags:['天一阁','老外滩','东钱湖','韩岭','宁波菜'],sideTitle:'节奏',sideCopy:'不做完整环湖，不再住第二晚。',links:[['天一阁博物院','宁波'],['东钱湖','宁波'],['韩岭老街','宁波']]},wenzhou:{title:'温州：连住2晚，完整留一天',copy:'D2傍晚到温州先吃，D3再慢慢安排江心屿、公园路、五马街和老城小吃；D4早餐后再去苍南。',tags:['江心屿','五马街','公园路','鱼丸','灯盏糕','糯米饭'],sideTitle:'住宿',sideCopy:'温州连住2晚，减少一次搬行李。',links:[['江心屿','温州'],['五马街','温州'],['公园路历史文化街区','温州']]},cangnan:{title:'苍南：168只开漂亮的一段',copy:'D4从温州出发，沿浙南168北段边开边停，重点是海岸、日落和海鲜，不追求刷完整条线。',tags:['浙南168','崇家岙','炎亭','海口村','海鲜'],sideTitle:'短段原则',sideCopy:'景好就停，拥堵就删；傍晚住海边。',links:[['浙南168','苍南'],['炎亭景区','苍南']]},jinyun:{title:'缙云仙都：下午＋第二天清晨',copy:'D5长转场后只走轻松线，D6清晨再补仙都晨景；把最舒服的时间留给朱潭山、溪边和田野。',tags:['仙都','朱潭山','倪翁洞','烧饼','土爽面'],sideTitle:'体力控制',sideCopy:'不冲顶；D5不安排重徒步。',links:[['仙都景区游客中心','缙云'],['朱潭山','缙云']]},songyang:{title:'松阳：古堰画乡＋古村慢游',copy:'D6从仙都去古堰画乡，再到松阳老城住宿；D7早晨古村只选1—2个，优先杨家堂/松庄，陈家铺看国庆客流决定。',tags:['古堰画乡','松阳老街','杨家堂','松庄','慢游'],sideTitle:'不要贪多',sideCopy:'古村分散，国庆停车压力大；最多两个就够。',links:[['古堰画乡','丽水'],['杨家堂村','松阳'],['松庄村','松阳']]},quzhou:{title:'衢州：老城、人文和最后一顿好吃的',copy:'D7下午到衢州逛老城、水亭门；D8上午安排孔氏南宗家庙或博物馆，中午吃完尽早返杭。',tags:['孔氏南宗家庙','衢州博物馆','水亭门','衢州菜'],sideTitle:'国庆返程',sideCopy:'10月2日返杭，尽量午后早走，不把到家时间卡死。',links:[['孔氏南宗家庙','衢州'],['衢州市博物馆','衢州'],['水亭门','衢州']]}};
+function amap(name,city){return `https://uri.amap.com/search?keyword=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}&callnative=1`;}
+function selectStop(key){const d=stops[key]||stops.all;document.querySelectorAll('[data-stop]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.stop===key)));document.getElementById('detail-title').textContent=d.title;document.getElementById('detail-copy').textContent=d.copy;document.getElementById('side-title').textContent=d.sideTitle;document.getElementById('side-copy').textContent=d.sideCopy;document.getElementById('detail-tags').innerHTML=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');document.getElementById('nav-links').innerHTML=d.links.map(([n,c])=>`<a href="${amap(n,c)}" target="_blank" rel="noreferrer">高德 · ${n}</a>`).join('');}
+selectStop('all');
+</script>
 </body>
 </html>

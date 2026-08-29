@@ -1,236 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">浙江亲子自驾：山海人文美食休闲环线</title>
-  <desc id="desc">2026年9月25日至30日，从杭州出发，经宁波、温州、苍南炎亭和缙云仙都返回杭州的六天五晚自驾路线示意图。</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fbf8f1"/>
-      <stop offset="1" stop-color="#edf4ef"/>
-    </linearGradient>
-    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e7f5f7"/>
-      <stop offset="1" stop-color="#cfe8ec"/>
-    </linearGradient>
-    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#efe8d4"/>
-      <stop offset="0.5" stop-color="#e8eed8"/>
-      <stop offset="1" stop-color="#dce9d4"/>
-    </linearGradient>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#17383e" flood-opacity="0.13"/>
-    </filter>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#17383e" flood-opacity="0.2"/>
-    </filter>
-    <pattern id="waves" width="46" height="20" patternUnits="userSpaceOnUse">
-      <path d="M0 10 Q11 0 23 10 T46 10" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.45"/>
-    </pattern>
-    <pattern id="contours" width="88" height="60" patternUnits="userSpaceOnUse">
-      <path d="M-8 18 C15 -3 43 4 58 22 S88 48 105 25 M-16 45 C14 22 42 29 55 46 S85 69 107 50" fill="none" stroke="#7c9a75" stroke-width="1.3" opacity="0.14"/>
-    </pattern>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 Z" fill="#1f6d78"/>
-    </marker>
-    <marker id="arrowCoral" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 Z" fill="#ef6f55"/>
-    </marker>
-    <style>
-      text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#183a40}
-      .muted{fill:#667b7c}
-      .small{font-size:15px}
-      .tiny{font-size:13px}
-      .chip{font-size:14px;font-weight:650}
-      .route{fill:none;stroke:#1f6d78;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
-      .routeGlow{fill:none;stroke:#ffffff;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;opacity:.92}
-      .dayTitle{font-size:18px;font-weight:750}
-      .dayText{font-size:14px;fill:#516b6d}
-      .place{font-size:17px;font-weight:760}
-      .poi{font-size:13px;fill:#536c6e}
-      .onDark{fill:#fff!important}
-    </style>
-  </defs>
-
-  <rect width="1600" height="1000" fill="url(#bg)"/>
-  <circle cx="95" cy="70" r="115" fill="#f3c98b" opacity="0.16"/>
-  <circle cx="1080" cy="90" r="190" fill="#83b9b3" opacity="0.11"/>
-
-  <g transform="translate(56 42)">
-    <text x="0" y="33" font-size="34" font-weight="820" letter-spacing="1">浙江亲子自驾 · 山海人文美食休闲环线</text>
-    <text x="1" y="66" font-size="17" class="muted">杭州出发｜宁波人文 · 温州烟火 · 苍南海岸 · 缙云山水｜2026.09.25—09.30</text>
-    <g transform="translate(954 2)">
-      <rect x="0" y="0" width="106" height="37" rx="18" fill="#183a40"/>
-      <text x="53" y="24" text-anchor="middle" class="chip onDark">6天5晚</text>
-      <rect x="116" y="0" width="116" height="37" rx="18" fill="#e6aa52"/>
-      <text x="174" y="24" text-anchor="middle" fill="#183a40" class="chip">9岁亲子</text>
-      <rect x="242" y="0" width="154" height="37" rx="18" fill="#dfeadd"/>
-      <text x="319" y="24" text-anchor="middle" fill="#345950" class="chip">日驾约1.5–3.5h</text>
-    </g>
-  </g>
-
-  <!-- geographic map panel -->
-  <g transform="translate(42 125)">
-    <rect width="1038" height="820" rx="30" fill="url(#sea)" filter="url(#shadow)"/>
-    <rect width="1038" height="820" rx="30" fill="url(#waves)" opacity="0.5"/>
-    <path d="M0 0 H502 C540 39 583 76 657 95 C739 116 810 141 861 189 C897 223 899 259 884 302 C867 351 807 389 763 425 C704 473 659 509 610 574 C563 636 528 704 501 820 H0 Z" fill="url(#land)"/>
-    <path d="M0 0 H502 C540 39 583 76 657 95 C739 116 810 141 861 189 C897 223 899 259 884 302 C867 351 807 389 763 425 C704 473 659 509 610 574 C563 636 528 704 501 820" fill="none" stroke="#7a9e91" stroke-width="3" opacity="0.62"/>
-    <path d="M0 0 H900 V820 H0 Z" fill="url(#contours)" opacity="0.9"/>
-    <text x="56" y="62" font-size="13" class="muted" letter-spacing="2">按经纬度落点 · 路线为连线示意</text>
-    <text x="915" y="522" font-size="16" fill="#6c9aa1" opacity="0.72" transform="rotate(90 915 522)" letter-spacing="4">东 海</text>
-
-    <!-- route glows -->
-    <path class="routeGlow" d="M210 96 C395 61 659 80 875 205"/>
-    <path class="routeGlow" d="M875 205 C780 344 620 493 480 607"/>
-    <path class="routeGlow" d="M480 607 C477 655 470 703 457 750"/>
-    <path class="routeGlow" d="M457 750 C382 678 294 560 221 457"/>
-    <path class="routeGlow" d="M221 457 C194 338 191 206 210 96"/>
-    <!-- directional route -->
-    <path class="route" d="M210 96 C395 61 659 80 875 205"/>
-    <path class="route" d="M875 205 C780 344 620 493 480 607"/>
-    <path class="route" d="M480 607 C477 655 470 703 457 750"/>
-    <path class="route" d="M457 750 C382 678 294 560 221 457"/>
-    <path class="route" d="M221 457 C194 338 191 206 210 96"/>
-
-    <!-- route distance labels -->
-    <g transform="translate(498 68)" aria-label="杭→宁波 155km，约2h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">155km · 约2h</text></g>
-    <g transform="translate(666 374)" aria-label="宁波→温州 240km，约2.5h"><rect width="132" height="29" rx="14" fill="#fff"/><text x="66" y="20" text-anchor="middle" class="tiny" font-weight="700">240km · 约2.5h</text></g>
-    <g transform="translate(482 670)" aria-label="温州→炎亭 160km，约2h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">160km · 约2h</text></g>
-    <g transform="translate(286 623)" aria-label="炎亭→缙云 260km，约3.5h"><rect width="132" height="29" rx="14" fill="#fff" stroke="#ef6f55" stroke-width="1.5"/><text x="66" y="20" text-anchor="middle" class="tiny" font-weight="700" fill="#d65a42">260km · 约3.5h</text></g>
-    <g transform="translate(128 274)" aria-label="缙云→杭 170km，约3h"><rect width="118" height="29" rx="14" fill="#fff"/><text x="59" y="20" text-anchor="middle" class="tiny" font-weight="700">170km · 约3h</text></g>
-
-    <!-- Hangzhou -->
-    <g transform="translate(210 96)" filter="url(#soft)">
-      <circle r="24" fill="#183a40" stroke="#fff" stroke-width="5"/>
-      <text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">1</text>
-    </g>
-    <g transform="translate(54 99)">
-      <rect width="132" height="64" rx="16" fill="#fff" opacity="0.97"/>
-      <text x="16" y="26" class="place">杭州</text>
-      <text x="16" y="49" class="poi">只作起终点</text>
-    </g>
-
-    <!-- Ningbo -->
-    <g transform="translate(875 205)" filter="url(#soft)">
-      <circle r="27" fill="#e6aa52" stroke="#fff" stroke-width="5"/>
-      <text y="7" text-anchor="middle" font-size="20" font-weight="800">2</text>
-    </g>
-    <g transform="translate(686 102)">
-      <rect width="267" height="91" rx="18" fill="#fff" opacity="0.97"/>
-      <text x="18" y="29" class="place">宁波 · 住2晚</text>
-      <text x="18" y="55" class="poi">天一阁＋月湖｜东钱湖韩岭</text>
-    </g>
-    <circle cx="857" cy="214" r="5" fill="#183a40"/>
-    <circle cx="885" cy="228" r="5" fill="#183a40"/>
-    <circle cx="921" cy="255" r="5" fill="#183a40"/>
-
-    <!-- Wenzhou -->
-    <g transform="translate(480 607)" filter="url(#soft)">
-      <circle r="27" fill="#ef8d68" stroke="#fff" stroke-width="5"/>
-      <text y="7" text-anchor="middle" font-size="20" font-weight="800">3</text>
-    </g>
-    <g transform="translate(550 523)">
-      <rect width="284" height="103" rx="18" fill="#fff" opacity="0.97"/>
-      <text x="18" y="29" class="place">温州 · 住1晚</text>
-      <text x="18" y="55" class="poi">江心屿＋公园路/五马街</text>
-      <text x="18" y="77" class="poi">糯米饭 · 鱼丸 · 灯盏糕</text>
-    </g>
-
-    <!-- Cangnan -->
-    <g transform="translate(457 750)" filter="url(#soft)">
-      <circle r="27" fill="#ef6f55" stroke="#fff" stroke-width="5"/>
-      <text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">4</text>
-    </g>
-    <g transform="translate(535 686)">
-      <rect width="306" height="106" rx="18" fill="#fff" opacity="0.97"/>
-      <text x="18" y="29" class="place">苍南炎亭 · 住1晚</text>
-      <text x="18" y="55" class="poi">168北段体验｜沙滩日落</text>
-      <text x="18" y="77" class="poi">梭子蟹＋当日小海鲜</text>
-      <text x="18" y="98" class="tiny" fill="#d65a42">只开一段，不刷完整168</text>
-    </g>
-
-    <!-- 168 inset -->
-    <g transform="translate(852 560)">
-      <rect width="162" height="225" rx="22" fill="#fff" opacity="0.96" filter="url(#soft)"/>
-      <text x="18" y="30" font-size="15" font-weight="800">168 短体验段</text>
-      <text x="18" y="51" class="tiny muted">由北向南 · 边开边停</text>
-      <path d="M39 74 C64 103 33 125 59 151 C75 167 61 187 49 204" fill="none" stroke="#ef6f55" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowCoral)"/>
-      <g font-size="12.5" fill="#516b6d">
-        <circle cx="39" cy="75" r="6" fill="#ef6f55"/><text x="57" y="80">崇家岙</text>
-        <circle cx="51" cy="113" r="6" fill="#ef6f55"/><text x="69" y="118">龙台背</text>
-        <circle cx="58" cy="151" r="7" fill="#183a40"/><text x="76" y="156" font-weight="750">炎亭</text>
-        <circle cx="49" cy="203" r="6" fill="#ef6f55"/><text x="67" y="208">海口村</text>
-      </g>
-    </g>
-
-    <!-- Jinyun -->
-    <g transform="translate(221 457)" filter="url(#soft)">
-      <circle r="27" fill="#76956b" stroke="#fff" stroke-width="5"/>
-      <text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">5</text>
-    </g>
-    <g transform="translate(37 330)">
-      <rect width="314" height="108" rx="18" fill="#fff" opacity="0.97"/>
-      <text x="18" y="29" class="place">缙云仙都 · 住1晚</text>
-      <text x="18" y="55" class="poi">接驳车 → 朱潭山 → 鼎湖峰外围</text>
-      <text x="18" y="77" class="poi">→ 倪翁洞摩崖题记</text>
-      <text x="18" y="99" class="tiny" fill="#668459">不登步虚山 · 不冲顶</text>
-    </g>
-
-    <!-- legend -->
-    <g transform="translate(38 752)">
-      <rect width="353" height="44" rx="18" fill="#ffffff" opacity="0.93"/>
-      <line x1="18" y1="22" x2="52" y2="22" stroke="#1f6d78" stroke-width="6" stroke-linecap="round"/>
-      <text x="61" y="27" class="tiny">城市转场</text>
-      <line x1="148" y1="22" x2="182" y2="22" stroke="#ef6f55" stroke-width="6" stroke-linecap="round"/>
-      <text x="191" y="27" class="tiny">168体验段</text>
-      <circle cx="303" cy="22" r="7" fill="#76956b"/>
-      <text x="317" y="27" class="tiny">轻山水</text>
-    </g>
-  </g>
-
-  <!-- itinerary panel -->
-  <g transform="translate(1110 125)">
-    <rect width="448" height="820" rx="30" fill="#fffdf8" filter="url(#shadow)"/>
-    <text x="30" y="46" font-size="22" font-weight="820">6天节奏</text>
-    <text x="30" y="72" class="small muted">每天只设一个主任务，留午休和吃饭时间</text>
-    <line x1="46" y1="108" x2="46" y2="678" stroke="#d4e1dc" stroke-width="4" stroke-linecap="round"/>
-
-    <g transform="translate(28 95)">
-      <circle cx="18" cy="22" r="18" fill="#183a40"/><text x="18" y="28" text-anchor="middle" class="onDark" font-size="14" font-weight="800">D1</text>
-      <text x="54" y="18" class="dayTitle">9/25 杭州 → 宁波</text>
-      <text x="54" y="42" class="dayText">天一阁·月湖，晚上吃宁波菜</text>
-      <rect x="318" y="5" width="73" height="28" rx="14" fill="#edf4f1"/><text x="354" y="24" text-anchor="middle" class="tiny" font-weight="700">住宁波</text>
-    </g>
-    <g transform="translate(28 188)">
-      <circle cx="18" cy="22" r="18" fill="#e6aa52"/><text x="18" y="28" text-anchor="middle" font-size="14" font-weight="800">D2</text>
-      <text x="54" y="18" class="dayTitle">9/26 宁波不挪窝</text>
-      <text x="54" y="42" class="dayText">东钱湖韩岭＋天一阁</text>
-      <rect x="318" y="5" width="73" height="28" rx="14" fill="#fff1d9"/><text x="354" y="24" text-anchor="middle" class="tiny" font-weight="700">住宁波</text>
-    </g>
-    <g transform="translate(28 281)">
-      <circle cx="18" cy="22" r="18" fill="#ef8d68"/><text x="18" y="28" text-anchor="middle" font-size="14" font-weight="800">D3</text>
-      <text x="54" y="18" class="dayTitle">9/27 宁波 → 温州</text>
-      <text x="54" y="42" class="dayText">江心屿看天气，傍晚老城小吃</text>
-      <rect x="312" y="5" width="79" height="28" rx="14" fill="#fee8df"/><text x="351" y="24" text-anchor="middle" class="tiny" font-weight="700">住温州</text>
-    </g>
-    <g transform="translate(28 374)">
-      <circle cx="18" cy="22" r="18" fill="#ef6f55"/><text x="18" y="28" text-anchor="middle" class="onDark" font-size="14" font-weight="800">D4</text>
-      <text x="54" y="18" class="dayTitle">9/28 温州 → 苍南</text>
-      <text x="54" y="42" class="dayText">早餐后出发，168短段＋海滩日落</text>
-      <rect x="312" y="5" width="79" height="28" rx="14" fill="#fee4dd"/><text x="351" y="24" text-anchor="middle" class="tiny" font-weight="700">住炎亭</text>
-    </g>
-    <g transform="translate(28 467)">
-      <circle cx="18" cy="22" r="18" fill="#76956b"/><text x="18" y="28" text-anchor="middle" class="onDark" font-size="14" font-weight="800">D5</text>
-      <text x="54" y="18" class="dayTitle">9/29 苍南 → 缙云</text>
-      <text x="54" y="42" class="dayText">午后仙都轻松线；这天转场最长</text>
-      <rect x="312" y="5" width="79" height="28" rx="14" fill="#e5efdf"/><text x="351" y="24" text-anchor="middle" class="tiny" font-weight="700">住缙云</text>
-    </g>
-    <g transform="translate(28 560)">
-      <circle cx="18" cy="22" r="18" fill="#1f6d78"/><text x="18" y="28" text-anchor="middle" class="onDark" font-size="14" font-weight="800">D6</text>
-      <text x="54" y="18" class="dayTitle">9/30 缙云 → 杭州</text>
-      <text x="54" y="42" class="dayText">睡醒再走；可选缙云烧饼早午餐</text>
-      <rect x="306" y="5" width="85" height="28" rx="14" fill="#e3eef0"/><text x="348" y="24" text-anchor="middle" class="tiny" font-weight="700">回杭州</text>
-    </g>
-
-  </g>
-
-  <text x="56" y="978" class="tiny muted">示意图不替代导航。车程为常态约数；沿海天气、道路施工、轮渡与景区开放，以出发前48小时实时信息为准。</text>
-  <text x="1544" y="978" text-anchor="end" class="tiny muted">路线版本 v1 · 2026-08-29</text>
+<title id="title">浙江亲子自驾：8天7晚山海人文美食环线</title>
+<desc id="desc">2026年9月25日至10月2日，从杭州出发，经宁波、温州、苍南、缙云、松阳、衢州返回杭州。</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf8f1"/><stop offset="1" stop-color="#edf4ef"/></linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7f5f7"/><stop offset="1" stop-color="#cfe8ec"/></linearGradient>
+  <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe8d4"/><stop offset=".5" stop-color="#e8eed8"/><stop offset="1" stop-color="#dce9d4"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#17383e" flood-opacity=".13"/></filter>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1f6d78"/></marker>
+  <style>text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#183a40}.muted{fill:#667b7c}.tiny{font-size:13px}.small{font-size:15px}.place{font-size:17px;font-weight:760}.poi{font-size:13px;fill:#536c6e}.route{fill:none;stroke:#1f6d78;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.glow{fill:none;stroke:#fff;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;opacity:.92}.dayTitle{font-size:17px;font-weight:750}.dayText{font-size:13px;fill:#516b6d}.onDark{fill:#fff!important}</style>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<g transform="translate(56 42)"><text x="0" y="33" font-size="34" font-weight="820">浙江亲子自驾 · 山海人文美食休闲环线</text><text x="1" y="66" font-size="17" class="muted">宁波压缩 · 温州慢逛 · 苍南海岸 · 仙都山水 · 松阳古村 · 衢州南孔｜2026.09.25—10.02</text><g transform="translate(1010 2)"><rect width="106" height="37" rx="18" fill="#183a40"/><text x="53" y="24" text-anchor="middle" class="onDark" font-size="14" font-weight="700">8天7晚</text><rect x="116" width="132" height="37" rx="18" fill="#e6aa52"/><text x="182" y="24" text-anchor="middle" font-size="14" font-weight="700">亲子慢旅行</text></g></g>
+<g transform="translate(42 125)">
+  <rect width="1038" height="820" rx="30" fill="url(#sea)" filter="url(#shadow)"/>
+  <path d="M0 0 H502 C540 39 583 76 657 95 C739 116 810 141 861 189 C897 223 899 259 884 302 C867 351 807 389 763 425 C704 473 659 509 610 574 C563 636 528 704 501 820 H0 Z" fill="url(#land)"/>
+  <text x="56" y="62" font-size="13" class="muted" letter-spacing="2">路线为地理示意 · 实际车程以当天导航为准</text>
+  <path class="glow" d="M210 96 C430 55 700 90 875 205"/><path class="glow" d="M875 205 C780 350 610 500 480 607"/><path class="glow" d="M480 607 C475 660 468 715 457 750"/><path class="glow" d="M457 750 C360 690 280 570 221 457"/><path class="glow" d="M221 457 C205 520 195 585 205 645"/><path class="glow" d="M205 645 C150 585 118 500 125 395"/><path class="glow" d="M125 395 C145 270 176 170 210 96"/>
+  <path class="route" d="M210 96 C430 55 700 90 875 205"/><path class="route" d="M875 205 C780 350 610 500 480 607"/><path class="route" d="M480 607 C475 660 468 715 457 750"/><path class="route" d="M457 750 C360 690 280 570 221 457"/><path class="route" d="M221 457 C205 520 195 585 205 645"/><path class="route" d="M205 645 C150 585 118 500 125 395"/><path class="route" d="M125 395 C145 270 176 170 210 96"/>
+  <g transform="translate(210 96)"><circle r="24" fill="#183a40" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">1</text></g><g transform="translate(52 92)"><rect width="135" height="62" rx="16" fill="#fff"/><text x="16" y="26" class="place">杭州</text><text x="16" y="48" class="poi">起点 / 终点</text></g>
+  <g transform="translate(875 205)"><circle r="27" fill="#e6aa52" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800">2</text></g><g transform="translate(680 105)"><rect width="280" height="88" rx="18" fill="#fff"/><text x="18" y="29" class="place">宁波 · 住1晚</text><text x="18" y="55" class="poi">天一阁｜东钱湖＋韩岭</text><text x="18" y="76" class="tiny" fill="#d65a42">D2午后直接去温州</text></g>
+  <g transform="translate(480 607)"><circle r="27" fill="#ef8d68" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800">3</text></g><g transform="translate(545 520)"><rect width="292" height="92" rx="18" fill="#fff"/><text x="18" y="29" class="place">温州 · 住2晚</text><text x="18" y="55" class="poi">江心屿｜公园路｜五马街</text><text x="18" y="77" class="poi">鱼丸 · 灯盏糕 · 糯米饭</text></g>
+  <g transform="translate(457 750)"><circle r="27" fill="#ef6f55" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">4</text></g><g transform="translate(530 680)"><rect width="300" height="88" rx="18" fill="#fff"/><text x="18" y="29" class="place">苍南 · 住1晚</text><text x="18" y="55" class="poi">浙南168短段｜海岸日落</text><text x="18" y="76" class="poi">只开漂亮一段，不刷全线</text></g>
+  <g transform="translate(221 457)"><circle r="27" fill="#76956b" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">5</text></g><g transform="translate(35 325)"><rect width="305" height="92" rx="18" fill="#fff"/><text x="18" y="29" class="place">缙云仙都 · 住1晚</text><text x="18" y="55" class="poi">D5午后轻走＋D6晨景</text><text x="18" y="76" class="poi">朱潭山｜倪翁洞｜溪边田野</text></g>
+  <g transform="translate(205 645)"><circle r="27" fill="#7d9d6e" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">6</text></g><g transform="translate(35 668)"><rect width="285" height="88" rx="18" fill="#fff"/><text x="18" y="29" class="place">松阳 · 住1晚</text><text x="18" y="55" class="poi">古堰画乡｜松阳老街</text><text x="18" y="76" class="poi">杨家堂/松庄最多选2个</text></g>
+  <g transform="translate(125 395)"><circle r="27" fill="#8b7858" stroke="#fff" stroke-width="5"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" class="onDark">7</text></g><g transform="translate(25 225)"><rect width="260" height="88" rx="18" fill="#fff"/><text x="18" y="29" class="place">衢州 · 住1晚</text><text x="18" y="55" class="poi">水亭门｜南孔｜博物馆</text><text x="18" y="76" class="poi">老城＋衢州菜收尾</text></g>
+  <g transform="translate(380 150)"><rect width="272" height="52" rx="16" fill="#fff7df" stroke="#e2c990"/><text x="136" y="22" text-anchor="middle" font-size="13" font-weight="750">10/1—10/2 国庆车流预警</text><text x="136" y="40" text-anchor="middle" class="tiny">古村停车与衢州返杭留弹性</text></g>
+</g>
+<g transform="translate(1110 125)"><rect width="448" height="820" rx="30" fill="#fffdf8" filter="url(#shadow)"/><text x="30" y="46" font-size="22" font-weight="820">8天节奏</text><text x="30" y="72" class="small muted">每天一个主任务，转场尽量控制在2—3小时</text><line x1="46" y1="108" x2="46" y2="735" stroke="#d4e1dc" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(28 95)"><circle cx="18" cy="20" r="18" fill="#183a40"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D1</text><text x="54" y="16" class="dayTitle">9/25 杭州 → 宁波</text><text x="54" y="38" class="dayText">天一阁＋老城，住宁波</text></g>
+  <g transform="translate(28 176)"><circle cx="18" cy="20" r="18" fill="#e6aa52"/><text x="18" y="26" text-anchor="middle" font-size="13" font-weight="800">D2</text><text x="54" y="16" class="dayTitle">9/26 宁波 → 温州</text><text x="54" y="38" class="dayText">东钱湖/韩岭；午后转场</text></g>
+  <g transform="translate(28 257)"><circle cx="18" cy="20" r="18" fill="#ef8d68"/><text x="18" y="26" text-anchor="middle" font-size="13" font-weight="800">D3</text><text x="54" y="16" class="dayTitle">9/27 温州慢玩</text><text x="54" y="38" class="dayText">江心屿＋老城＋小吃</text></g>
+  <g transform="translate(28 338)"><circle cx="18" cy="20" r="18" fill="#ef6f55"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D4</text><text x="54" y="16" class="dayTitle">9/28 温州 → 苍南</text><text x="54" y="38" class="dayText">168海岸线慢开，住海边</text></g>
+  <g transform="translate(28 419)"><circle cx="18" cy="20" r="18" fill="#76956b"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D5</text><text x="54" y="16" class="dayTitle">9/29 苍南 → 缙云</text><text x="54" y="38" class="dayText">全程最长转场；午后仙都</text></g>
+  <g transform="translate(28 500)"><circle cx="18" cy="20" r="18" fill="#7d9d6e"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D6</text><text x="54" y="16" class="dayTitle">9/30 缙云 → 松阳</text><text x="54" y="38" class="dayText">晨景＋古堰画乡＋老街</text></g>
+  <g transform="translate(28 581)"><circle cx="18" cy="20" r="18" fill="#8b7858"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D7</text><text x="54" y="16" class="dayTitle">10/1 松阳 → 衢州</text><text x="54" y="38" class="dayText">古村1—2个；下午逛衢州</text></g>
+  <g transform="translate(28 662)"><circle cx="18" cy="20" r="18" fill="#1f6d78"/><text x="18" y="26" text-anchor="middle" class="onDark" font-size="13" font-weight="800">D8</text><text x="54" y="16" class="dayTitle">10/2 衢州 → 杭州</text><text x="54" y="38" class="dayText">南孔/博物馆；午饭后返杭</text></g>
+  <rect x="30" y="742" width="388" height="52" rx="14" fill="#fff7df" stroke="#e2c990"/><text x="224" y="764" text-anchor="middle" class="tiny" font-weight="750">国庆假期：返杭时间不设死线</text><text x="224" y="784" text-anchor="middle" class="tiny">以实时高速路况为准，宁可多休息也不赶路</text>
+</g>
+<text x="56" y="978" class="tiny muted">示意图不替代导航。沿海天气、景区开放、古村停车与国庆高速路况，请在出发前48小时复核。</text><text x="1544" y="978" text-anchor="end" class="tiny muted">路线版本 v2 · 2026-08-29</text>
 </svg>
