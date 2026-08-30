@@ -13,7 +13,7 @@
     .map{display:block;width:100%;margin-top:18px;border-radius:24px;background:#fff;box-shadow:var(--shadow)}
     section{margin-top:22px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:10px}.section-title h2{font-size:clamp(21px,2vw,28px);margin:0}.hint{color:var(--muted);font-size:13px}
     .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)} table{width:100%;min-width:720px;border-collapse:collapse}th,td{padding:11px 12px;border-bottom:1px solid #e8efea;text-align:left;font-size:14px}th{background:#f1f6f4;white-space:nowrap}tr:last-child td{border-bottom:0}.metric{font-weight:800;color:var(--teal)}
-    .days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.day{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px}.day h3{margin:0 0 8px;font-size:16px}.day ul{margin:0;padding-left:19px;color:#536b6d;line-height:1.7}.stay{margin-top:8px;font-size:13px;font-weight:700;color:var(--teal)}
+    .days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.day{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px}.day h3{margin:0 0 8px;font-size:16px}.day ul{margin:0;padding-left:19px;color:#536b6d;line-height:1.72}.day li+li{margin-top:3px}.stay{margin-top:9px;font-size:13px;font-weight:700;color:var(--teal)}
     .alert{margin-top:14px;padding:12px 14px;border-radius:14px;background:#fff7df;border:1px solid #e2c990;color:#6a5729;font-size:14px;line-height:1.65}
     footer{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.6}
     @media(max-width:680px){.days{grid-template-columns:1fr}.page{padding-inline:10px}.section-title{align-items:start;flex-direction:column}.hint{font-size:12px}}
@@ -46,17 +46,23 @@
   </section>
 
   <section>
-    <div class="section-title"><h2>每日安排</h2><div class="hint">累了就删次要点，不补行程</div></div>
+    <div class="section-title"><h2>每日安排</h2><div class="hint">时间是参考；累了就删次要点，不补行程</div></div>
     <div class="days">
-      <article class="day"><h3>D1 · 9/25｜杭州 → 宁波</h3><ul><li>08:30 杭州出发，午前到宁波。</li><li>下午：天一阁 + 鼓楼/月湖。</li><li>晚上：宁波菜；有体力再去老外滩。</li></ul><div class="stay">住：天一广场 / 老外滩附近</div></article>
-      <article class="day"><h3>D2 · 9/26｜宁波 → 温州</h3><ul><li>上午：东钱湖 + 韩岭，11:00左右结束。</li><li>午饭后尽量13:00前出发，约4小时。</li><li>晚上：公园路 / 五马街吃逛。</li></ul><div class="stay">住：温州鹿城老城附近</div></article>
-      <article class="day"><h3>D3 · 9/27｜温州 → 苍南</h3><ul><li>上午：江心屿；天气不合适就老城。</li><li>午饭后去苍南，下午走浙南168漂亮短段。</li><li>傍晚：海边、日落、海鲜。</li></ul><div class="stay">住：炎亭或苍南海岸附近</div></article>
-      <article class="day"><h3>D4 · 9/28｜苍南 → 缙云仙都</h3><ul><li>09:00—09:30 出发，约3.5—4小时。</li><li>下午：仙都，朱潭山 / 倪翁洞按体力取舍。</li><li>晚上：缙云烧饼、土爽面。</li></ul><div class="stay">住：仙都景区附近</div></article>
-      <article class="day"><h3>D5 · 9/29｜缙云 → 古堰画乡 → 松阳</h3><ul><li>08:00 仙都晨景，随后去古堰画乡。</li><li>午后：瓯江、通济堰一带慢走。</li><li>15:30—16:00 去松阳，晚上逛老街。</li></ul><div class="stay">住：松阳县城 / 老街附近</div></article>
-      <article class="day"><h3>D6 · 9/30｜松阳 → 衢州</h3><ul><li>上午首选杨家堂，只玩一个村；若限流/停车困难就改陈家铺。</li><li>松庄降为备用；孩子不想逛古村可换大木山茶园。</li><li>午后去衢州，约1.6小时；傍晚水亭门、老城。</li></ul><div class="stay">住：水亭门 / 老城附近</div></article>
-      <article class="day"><h3>D7 · 10/1｜衢州 → 杭州</h3><ul><li>先看实时高速路况。</li><li>路况正常：南孔 / 衢州市博物馆二选一。</li><li>若拥堵明显：早餐后直接返杭。</li></ul><div class="stay">返程：实时路况优先于上午景点</div></article>
+      <article class="day"><h3>D1 · 9/25｜杭州 → 宁波</h3><ul><li><strong>08:30</strong> 杭州出发，约2小时，途中服务区休息一次即可。</li><li><strong>11:00左右</strong> 到宁波，先入住/寄存行李，再吃午饭。</li><li><strong>14:00—16:30</strong> 天一阁为主，顺带月湖、鼓楼一带慢走。</li><li><strong>17:30后</strong> 吃宁波菜，可选海鲜、汤圆、年糕类；晚上有体力再去老外滩散步。</li><li>当天不要再加东钱湖，把城市人文玩扎实即可。</li></ul><div class="stay">住：天一广场 / 老外滩附近，方便步行吃饭</div></article>
+
+      <article class="day"><h3>D2 · 9/26｜宁波 → 温州</h3><ul><li><strong>08:30</strong> 退房后去东钱湖，上午只走湖景 + 韩岭，不做完整环湖。</li><li><strong>09:00—11:00</strong> 湖边散步、韩岭老街，孩子有兴趣可多留半小时。</li><li><strong>11:00—12:15</strong> 在东钱湖附近午饭，尽量 <strong>13:00前</strong> 出发。</li><li>宁波到温州约269 km / 4小时，建议中途服务区休息一次，预计 <strong>17:00左右</strong> 入住。</li><li><strong>晚上</strong> 公园路 / 五马街吃逛，重点尝鱼丸、灯盏糕、糯米饭，不再安排正式景点。</li></ul><div class="stay">住：温州鹿城老城附近，方便夜间步行</div></article>
+
+      <article class="day"><h3>D3 · 9/27｜温州 → 苍南</h3><ul><li><strong>08:30—10:30</strong> 江心屿；如果天气、轮渡或孩子状态不合适，就改成老城慢逛。</li><li><strong>11:00—12:00</strong> 温州午饭后直接取车。</li><li><strong>12:30—13:00</strong> 出发去苍南，县城方向约66 km / 1.1小时。</li><li><strong>14:30后</strong> 进入浙南168，选一段漂亮海岸线慢慢开，重点是停车看海、走走沙滩，不追求把整条168跑完。</li><li><strong>傍晚</strong> 找海边看日落，晚上吃海鲜，尽量早点休息。</li></ul><div class="stay">住：炎亭或苍南海岸附近，停车方便优先</div></article>
+
+      <article class="day"><h3>D4 · 9/28｜苍南 → 缙云仙都</h3><ul><li><strong>08:00左右</strong> 海边吃早餐、再走一小段，上午不要安排新的大景点。</li><li><strong>09:00—09:30</strong> 出发去缙云，约240—270 km / 3.5—4小时，是全程较长转场。</li><li><strong>13:00左右</strong> 抵达后先吃午饭、入住或寄存行李，稍微休息。</li><li><strong>15:00—17:30</strong> 仙都慢玩，优先朱潭山、溪边田野；倪翁洞看体力决定。</li><li><strong>晚上</strong> 吃缙云烧饼、土爽面，早点休息，为第二天晨景留体力。</li></ul><div class="stay">住：仙都景区附近，方便第二天一早进景区</div></article>
+
+      <article class="day"><h3>D5 · 9/29｜缙云 → 古堰画乡 → 松阳</h3><ul><li><strong>08:00—09:15</strong> 仙都晨景，补前一天没走完的轻松段。</li><li><strong>09:30—10:00</strong> 离开仙都，前往古堰画乡。</li><li><strong>中午—14:30</strong> 看瓯江、通济堰、古樟一带；古堰画乡控制在2—3小时，不要耗掉整个下午。</li><li><strong>15:30—16:00</strong> 出发去松阳，傍晚入住。</li><li><strong>晚上</strong> 松阳老街散步，吃当地小吃和家常菜，今天不再进古村。</li></ul><div class="stay">住：松阳县城 / 老街附近，第二天出发方便</div></article>
+
+      <article class="day"><h3>D6 · 9/30｜松阳 → 衢州</h3><ul><li><strong>08:30左右</strong> 出发去古村，首选杨家堂，上午只玩一个村，留出拍照、喝茶和慢走时间。</li><li>若杨家堂限流或停车困难，就直接换陈家铺；松庄只作为备用，不为了“多打一个村”绕路。</li><li>孩子如果对古村兴趣不高，可把上午改成 <strong>大木山茶园</strong>，体验会更轻松。</li><li><strong>11:30—12:30</strong> 回松阳县城午饭、休息。</li><li><strong>13:30—14:00</strong> 出发去衢州，约121 km / 1.6小时；傍晚逛水亭门、老城，晚上重点吃衢州菜。</li></ul><div class="stay">住：水亭门 / 老城附近，方便晚饭和第二天上午</div></article>
+
+      <article class="day"><h3>D7 · 10/1｜衢州 → 杭州</h3><ul><li><strong>起床第一件事</strong> 看衢州→杭州高速实时路况，这一天路线服从拥堵情况。</li><li>如果路况正常，上午安排 <strong>孔氏南宗家庙 / 衢州市博物馆</strong>，二选一即可；时间宽裕再加第二个。</li><li><strong>11:30左右</strong> 午饭，正常情况下中午前后返杭。</li><li>如果早上已经出现明显拥堵，直接取消上午景点，早餐后上高速。</li><li>常态约225 km / 2.8小时，但10月1日不要按这个时间卡到家时间。</li></ul><div class="stay">返程：实时路况优先于任何上午景点</div></article>
     </div>
-    <div class="alert"><strong>国庆提醒：</strong>10月1日衢州返杭州不要按常态 2.8 小时卡时间，上午景点全部可取消。</div>
+    <div class="alert"><strong>国庆提醒：</strong>10月1日衢州返杭州不要按常态 2.8 小时卡时间；当天所有上午景点都属于“可删项”。</div>
   </section>
 
   <footer>里程为行程规划参考值；浙南168、古堰画乡及景区内道路会增加实际驾驶里程。</footer>
