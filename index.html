@@ -4,204 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>浙江亲子自驾｜7天6晚山海人文美食游</title>
+  <title>浙江亲子自驾｜7天6晚</title>
   <style>
-    :root{
-      --ink:#183a40;--muted:#687d7e;--paper:#f8f5ed;--card:#fffdf8;
-      --teal:#1f6d78;--coral:#ef6f55;--gold:#e6aa52;--green:#76956b;
-      --line:#dce6df;--shadow:0 18px 55px rgba(28,61,65,.12)
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(circle at 6% 0,#f8e8ca 0,transparent 24rem),linear-gradient(135deg,#fbf8f1,#eef4ef);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}
-    .page{width:min(1320px,100%);margin:auto;padding:28px clamp(14px,3vw,42px) 54px}
-    h1{font-size:clamp(28px,3vw,44px);margin:0 0 8px;line-height:1.15}
-    h2{font-size:clamp(21px,2vw,29px);margin:0 0 10px}
-    h3{margin:0 0 6px;font-size:16px}
-    p{margin:0}
-    .subtitle{color:var(--muted);font-size:clamp(14px,1.4vw,18px);line-height:1.7}
-    .pillbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .pill{padding:7px 11px;border-radius:999px;background:#edf4f1;color:#365955;font-size:13px;font-weight:700}
-    .notice{margin:18px 0;padding:13px 16px;border:1px solid #e2c990;border-radius:14px;background:#fff7df;color:#6a5729;line-height:1.7}
-    .map{display:block;width:100%;border-radius:24px;background:#fff;box-shadow:var(--shadow)}
-    .section{margin-top:24px;padding:20px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.84)}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
-    .card{padding:15px;border-radius:15px;border:1px solid #e2e9e3;background:var(--card);line-height:1.72}
-    .card p{color:#536c6e}
-    .card ul{margin:7px 0 0;padding-left:19px;color:#536c6e}
-    .day strong{color:var(--ink)}
-    .metric{font-weight:800;color:var(--teal)}
-    .table-wrap{overflow-x:auto;border:1px solid #e2e9e3;border-radius:16px}
-    table{width:100%;min-width:820px;border-collapse:collapse;background:var(--card)}
-    th,td{padding:12px 11px;border-bottom:1px solid #e8efea;text-align:left;font-size:14px;vertical-align:top}
-    th{background:#f2f7f5;white-space:nowrap}
-    tr:last-child td{border-bottom:none}
-    .warn-row td{background:#fffaf0}
-    .source-note{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.7}
-    footer{margin-top:24px;color:var(--muted);font-size:13px;line-height:1.7}
-    @media(max-width:920px){.summary{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:620px){.grid,.summary{grid-template-columns:1fr}.page{padding-inline:10px}.section{padding:15px}}
+    :root{--ink:#183a40;--muted:#667b7c;--paper:#f8f5ed;--card:#fffdf8;--teal:#1f6d78;--gold:#e6aa52;--line:#dce6df;--shadow:0 16px 44px rgba(28,61,65,.12)}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#fbf8f1,#eef4ef);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}
+    .page{width:min(1320px,100%);margin:auto;padding:28px clamp(12px,3vw,38px) 48px} h1{font-size:clamp(28px,3vw,44px);margin:0 0 8px;line-height:1.15}
+    .subtitle{color:var(--muted);font-size:clamp(14px,1.4vw,18px);line-height:1.65}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.pill{padding:7px 11px;border-radius:999px;background:#edf4f1;color:#365955;font-size:13px;font-weight:700}
+    .map{display:block;width:100%;margin-top:18px;border-radius:24px;background:#fff;box-shadow:var(--shadow)}
+    section{margin-top:22px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:10px}.section-title h2{font-size:clamp(21px,2vw,28px);margin:0}.hint{color:var(--muted);font-size:13px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)} table{width:100%;min-width:720px;border-collapse:collapse}th,td{padding:11px 12px;border-bottom:1px solid #e8efea;text-align:left;font-size:14px}th{background:#f1f6f4;white-space:nowrap}tr:last-child td{border-bottom:0}.metric{font-weight:800;color:var(--teal)}
+    .days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.day{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 16px}.day h3{margin:0 0 8px;font-size:16px}.day ul{margin:0;padding-left:19px;color:#536b6d;line-height:1.7}.stay{margin-top:8px;font-size:13px;font-weight:700;color:var(--teal)}
+    .alert{margin-top:14px;padding:12px 14px;border-radius:14px;background:#fff7df;border:1px solid #e2c990;color:#6a5729;font-size:14px;line-height:1.65}
+    footer{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.6}
+    @media(max-width:680px){.days{grid-template-columns:1fr}.page{padding-inline:10px}.section-title{align-items:start;flex-direction:column}.hint{font-size:12px}}
   </style>
 </head>
 <body>
 <main class="page">
   <header>
-    <h1>浙江亲子自驾 · 山海人文美食游</h1>
-    <div class="subtitle">7天6晚｜2026年9月25日—10月1日｜杭州 → 宁波 → 温州 → 苍南 → 缙云 → 古堰画乡 → 松阳 → 衢州 → 杭州</div>
-    <div class="pillbar">
-      <span class="pill">亲子慢旅行</span>
-      <span class="pill">美食 + 自然 + 人文</span>
-      <span class="pill">每天一个核心体验</span>
-      <span class="pill">酒店优先</span>
-    </div>
+    <h1>浙江亲子自驾 · 7天6晚</h1>
+    <div class="subtitle">2026年9月25日—10月1日｜杭州 → 宁波 → 温州 → 苍南 → 缙云 → 古堰画乡 → 松阳 → 衢州 → 杭州</div>
+    <div class="pills"><span class="pill">亲子慢旅行</span><span class="pill">美食 · 自然 · 人文</span><span class="pill">每天一个核心体验</span></div>
   </header>
 
-  <div class="notice"><strong>路线方向：</strong>路线图按照城市经纬度的相对位置落点。温州在宁波西南、苍南在温州西南，缙云在苍南西北，松阳在缙云西南，衢州在松阳西北。图中同时标注每个转场的参考公里数与常态车程。</div>
+  <img class="map" src="./浙江亲子自驾路线地图.svg" alt="浙江7天6晚自驾路线图，标注每段公里数和车程">
 
-  <img class="map" src="./浙江亲子自驾路线地图.svg" alt="杭州经宁波、温州、苍南、缙云、古堰画乡、松阳、衢州返回杭州的7天6晚亲子自驾路线图，标注每段参考公里数和车程">
-
-  <section class="section">
-    <h2>分段里程与车程</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>日期</th><th>转场</th><th>参考距离</th><th>常态驾驶</th><th>使用说明</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>D1</td><td>杭州 → 宁波</td><td><span class="metric">约 155 km</span></td><td>约 1.9—2.1 h</td><td>市中心到市中心参考。</td></tr>
-          <tr class="warn-row"><td>D2</td><td>宁波 → 温州</td><td><span class="metric">约 269 km</span></td><td>约 3.8—4.2 h</td><td>该段接近 4 小时；建议 13:00 左右离开东钱湖。</td></tr>
-          <tr><td>D3</td><td>温州 → 苍南县城</td><td><span class="metric">约 66 km</span></td><td>约 1.1 h</td><td>当天进入浙南168后，另有约 30—60 km 景观道路。</td></tr>
-          <tr class="warn-row"><td>D4</td><td>苍南海岸 → 缙云仙都</td><td><span class="metric">约 240—270 km</span></td><td>约 3.5—4.0 h</td><td>取决于前一晚住炎亭、县城还是更南段海岸；这是全程最长转场之一。</td></tr>
-          <tr><td>D5</td><td>缙云仙都 → 古堰画乡 → 松阳</td><td><span class="metric">约 145—160 km</span></td><td>约 2.5—3.0 h</td><td>包含古堰画乡绕行；景区游玩时间另计。缙云直达松阳约 107 km / 1.8 h。</td></tr>
-          <tr><td>D6</td><td>松阳 → 衢州</td><td><span class="metric">约 121 km</span></td><td>约 1.6 h</td><td>上午古村结束后再出发。</td></tr>
-          <tr class="warn-row"><td>D7</td><td>衢州 → 杭州</td><td><span class="metric">约 225 km</span></td><td>常态约 2.8 h</td><td>10月1日不能按常态卡点，实时导航优先。</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="source-note">全程主转场约 <strong>1,250—1,330 km</strong>，不含城市内找餐厅、酒店和景区接驳。公里数为路线规划参考，不替代出发当天导航。</p>
+  <section>
+    <div class="section-title"><h2>分段里程</h2><div class="hint">景区内绕行另计｜出发当天以导航为准</div></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>日期</th><th>路段</th><th>距离</th><th>常态车程</th></tr></thead>
+      <tbody>
+        <tr><td>D1</td><td>杭州 → 宁波</td><td class="metric">约155 km</td><td>约2h</td></tr>
+        <tr><td>D2</td><td>宁波 → 温州</td><td class="metric">约269 km</td><td>约4h</td></tr>
+        <tr><td>D3</td><td>温州 → 苍南</td><td class="metric">约66 km</td><td>约1.1h</td></tr>
+        <tr><td>D4</td><td>苍南海岸 → 缙云</td><td class="metric">约240—270 km</td><td>约3.5—4h</td></tr>
+        <tr><td>D5</td><td>缙云 → 古堰画乡 → 松阳</td><td class="metric">约145—160 km</td><td>约2.5—3h</td></tr>
+        <tr><td>D6</td><td>松阳 → 衢州</td><td class="metric">约121 km</td><td>约1.6h</td></tr>
+        <tr><td>D7</td><td>衢州 → 杭州</td><td class="metric">约225 km</td><td>常态约2.8h</td></tr>
+      </tbody>
+    </table></div>
   </section>
 
-  <section class="section">
-    <h2>整体节奏</h2>
-    <div class="summary">
-      <article class="card"><h3>D1—D2 · 城市人文</h3><p>宁波保留天一阁、东钱湖和韩岭；D2 午后完成全程第二长的城市转场。</p></article>
-      <article class="card"><h3>D3 · 城市转海岸</h3><p>温州上午抓一个重点，中午后到苍南，下午开始浙南168短段。</p></article>
-      <article class="card"><h3>D4—D5 · 海岸转山水</h3><p>从苍南折返缙云，再经古堰画乡到松阳，地貌和体验变化最丰富。</p></article>
-      <article class="card"><h3>D6—D7 · 古村与衢州</h3><p>松阳只选一两个古村，衢州用老城、南孔和美食收尾，再返杭州。</p></article>
+  <section>
+    <div class="section-title"><h2>每日安排</h2><div class="hint">累了就删次要点，不补行程</div></div>
+    <div class="days">
+      <article class="day"><h3>D1 · 9/25｜杭州 → 宁波</h3><ul><li>08:30 杭州出发，午前到宁波。</li><li>下午：天一阁 + 鼓楼/月湖。</li><li>晚上：宁波菜；有体力再去老外滩。</li></ul><div class="stay">住：天一广场 / 老外滩附近</div></article>
+      <article class="day"><h3>D2 · 9/26｜宁波 → 温州</h3><ul><li>上午：东钱湖 + 韩岭，11:00左右结束。</li><li>午饭后尽量13:00前出发，约4小时。</li><li>晚上：公园路 / 五马街吃逛。</li></ul><div class="stay">住：温州鹿城老城附近</div></article>
+      <article class="day"><h3>D3 · 9/27｜温州 → 苍南</h3><ul><li>上午：江心屿；天气不合适就老城。</li><li>午饭后去苍南，下午走浙南168漂亮短段。</li><li>傍晚：海边、日落、海鲜。</li></ul><div class="stay">住：炎亭或苍南海岸附近</div></article>
+      <article class="day"><h3>D4 · 9/28｜苍南 → 缙云仙都</h3><ul><li>09:00—09:30 出发，约3.5—4小时。</li><li>下午：仙都，朱潭山 / 倪翁洞按体力取舍。</li><li>晚上：缙云烧饼、土爽面。</li></ul><div class="stay">住：仙都景区附近</div></article>
+      <article class="day"><h3>D5 · 9/29｜缙云 → 古堰画乡 → 松阳</h3><ul><li>08:00 仙都晨景，随后去古堰画乡。</li><li>午后：瓯江、通济堰一带慢走。</li><li>15:30—16:00 去松阳，晚上逛老街。</li></ul><div class="stay">住：松阳县城 / 老街附近</div></article>
+      <article class="day"><h3>D6 · 9/30｜松阳 → 衢州</h3><ul><li>上午：杨家堂 / 松庄选1—2个。</li><li>午后去衢州，约1.6小时。</li><li>傍晚：水亭门、老城；晚上吃衢州菜。</li></ul><div class="stay">住：水亭门 / 老城附近</div></article>
+      <article class="day"><h3>D7 · 10/1｜衢州 → 杭州</h3><ul><li>先看实时高速路况。</li><li>路况正常：南孔 / 衢州市博物馆二选一。</li><li>若拥堵明显：早餐后直接返杭。</li></ul><div class="stay">返程：实时路况优先于上午景点</div></article>
     </div>
+    <div class="alert"><strong>国庆提醒：</strong>10月1日衢州返杭州不要按常态 2.8 小时卡时间，上午景点全部可取消。</div>
   </section>
 
-  <section class="section">
-    <h2>每天具体安排</h2>
-    <div class="grid">
-      <article class="card day">
-        <h3>D1 · 9月25日｜杭州 → 宁波</h3>
-        <ul>
-          <li><strong>08:30</strong> 杭州出发，约 155 km / 2 小时。</li>
-          <li>午前抵达宁波，入住并吃午饭。</li>
-          <li><strong>14:00—17:00</strong> 天一阁 + 鼓楼/月湖片区。</li>
-          <li>晚餐吃宁波菜；孩子状态好再去老外滩。</li>
-          <li><strong>住宿：宁波。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D2 · 9月26日｜宁波 → 温州</h3>
-        <ul>
-          <li><strong>08:30</strong> 退房后去东钱湖。</li>
-          <li><strong>09:00—11:00</strong> 湖景 + 韩岭老街，不做完整环湖。</li>
-          <li><strong>11:00—12:15</strong> 午饭，尽量在 13:00 前出发。</li>
-          <li>宁波到温州约 269 km / 4 小时，预计 17:00 左右入住。</li>
-          <li>晚上公园路、五马街一带边走边吃。</li>
-          <li><strong>住宿：温州。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D3 · 9月27日｜温州 → 苍南</h3>
-        <ul>
-          <li><strong>08:30</strong> 江心屿；若天气或轮渡不合适，换成老城慢逛。</li>
-          <li><strong>11:30</strong> 温州午饭。</li>
-          <li><strong>12:30—13:00</strong> 出发去苍南，县城方向约 66 km / 1.1 小时。</li>
-          <li>下午进入浙南168，选择 30—60 km 的漂亮短段边开边停。</li>
-          <li>傍晚看海、日落和吃海鲜。</li>
-          <li><strong>住宿：炎亭或苍南海岸附近。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D4 · 9月28日｜苍南 → 缙云仙都</h3>
-        <ul>
-          <li>早晨海边再留一点时间，但不要拖到中午才出发。</li>
-          <li><strong>09:00—09:30</strong> 出发，按住宿点不同约 240—270 km / 3.5—4 小时。</li>
-          <li>下午进入仙都，重点走朱潭山、倪翁洞、溪边田野。</li>
-          <li>不追求全部打卡，孩子累了就提前结束。</li>
-          <li>晚上吃缙云烧饼、土爽面。</li>
-          <li><strong>住宿：仙都附近优先。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D5 · 9月29日｜缙云 → 古堰画乡 → 松阳</h3>
-        <ul>
-          <li><strong>08:00</strong> 仙都晨景，补前一天没走完的轻松段。</li>
-          <li><strong>09:30—10:00</strong> 离开仙都，前往古堰画乡。</li>
-          <li>中午到下午看瓯江、通济堰和古樟一带。</li>
-          <li><strong>15:30—16:00</strong> 前往松阳，全天转场约 145—160 km / 2.5—3 小时。</li>
-          <li>晚上松阳老街散步、吃当地菜。</li>
-          <li><strong>住宿：松阳。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D6 · 9月30日｜松阳 → 衢州</h3>
-        <ul>
-          <li>上午古村只选 <strong>1—2 个</strong>，优先杨家堂、松庄。</li>
-          <li>中午回松阳吃饭、休息。</li>
-          <li><strong>13:30—14:00</strong> 出发去衢州，约 121 km / 1.6 小时。</li>
-          <li>傍晚水亭门、老城区慢逛，晚上吃衢州菜。</li>
-          <li><strong>住宿：衢州。</strong></li>
-        </ul>
-      </article>
-
-      <article class="card day">
-        <h3>D7 · 10月1日｜衢州 → 杭州</h3>
-        <ul>
-          <li>起床先查看衢州到杭州高速实时路况。</li>
-          <li>路况正常：孔氏南宗家庙 + 衢州市博物馆，按状态二选一或都走。</li>
-          <li>中午吃完饭返杭；普通时段约 225 km / 2.8 小时。</li>
-          <li>若高速已明显拥堵，早餐后直接出发，取消上午景点。</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>住宿建议</h2>
-    <div class="grid">
-      <article class="card"><h3>宁波 · 1晚</h3><p>天一广场 / 老外滩附近，D1 步行方便；D2 退房后直接去东钱湖。</p></article>
-      <article class="card"><h3>温州 · 1晚</h3><p>鹿城老城附近，方便晚上吃逛，第二天上午去江心屿或老城。</p></article>
-      <article class="card"><h3>苍南 · 1晚</h3><p>炎亭或海岸线附近，停车和第二天上高速的便利度比酒店等级更重要。</p></article>
-      <article class="card"><h3>缙云 · 1晚</h3><p>仙都附近优先，方便第二天晨景，减少县城与景区之间来回。</p></article>
-      <article class="card"><h3>松阳 · 1晚</h3><p>县城 / 老街附近，晚上吃饭散步方便，第二天去古村也好衔接。</p></article>
-      <article class="card"><h3>衢州 · 1晚</h3><p>水亭门 / 老城附近，方便 D6 晚饭和 D7 上午的人文点。</p></article>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>执行原则</h2>
-    <div class="grid">
-      <article class="card"><h3>景点随时可删</h3><p>每天只保留一个核心体验。孩子累、下雨或堵车，就删掉次要点，不补作业。</p></article>
-      <article class="card"><h3>D2、D4 是驾驶重点</h3><p>宁波到温州、苍南到缙云都接近 4 小时，不要把到达后的活动排得太满。</p></article>
-      <article class="card"><h3>苍南和松阳都不要赶</h3><p>海岸线和古村的价值在“停下来”，不是完成多少公里或打卡多少村。</p></article>
-      <article class="card"><h3>D7 返程优先级最高</h3><p>10 月 1 日实时路况比南孔、博物馆更重要，宁可少玩也不要卡在返程高峰。</p></article>
-    </div>
-  </section>
-
-  <footer>
-    里程依据常态城际路线数据整理：杭州—宁波约155 km / 1.9h，宁波—温州约269 km / 4h，温州—苍南县城约66 km / 1.1h，缙云—松阳直达约107 km / 1.8h，松阳—衢州约121 km / 1.6h，衢州—杭州约225 km / 2.8h。苍南海岸和古堰画乡属于景区绕行，因此采用区间值；出发前请再用高德地图复核。
-  </footer>
+  <footer>里程为行程规划参考值；浙南168、古堰画乡及景区内道路会增加实际驾驶里程。</footer>
 </main>
 </body>
 </html>
