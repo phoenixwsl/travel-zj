@@ -1,40 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">浙江亲子自驾 · 7天6晚</title>
-  <desc id="desc">2026年9月25日至10月1日，从杭州出发，经宁波、温州、苍南、缙云、松阳、衢州返回杭州。</desc>
-  <rect width="1600" height="900" fill="#f8f5ed"/>
-  <style>
-    text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#183a40}
-    .city{font-size:24px;font-weight:700}.sub{font-size:16px;fill:#687d7e}.day{font-size:18px;font-weight:700}
-    .route{fill:none;stroke:#1f6d78;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.dot{stroke:#fff;stroke-width:5}
-  </style>
-  <text x="60" y="65" font-size="38" font-weight="800">浙江亲子自驾 · 7天6晚</text>
-  <text x="60" y="98" class="sub">2026.09.25—10.01｜宁波人文 · 温州烟火 · 苍南海岸 · 仙都山水 · 松阳古村 · 衢州南孔</text>
-  <path class="route" d="M210 205 C450 130 730 140 1010 240 C860 370 710 500 610 620 C600 700 510 745 390 670 C300 590 260 470 300 365 C275 300 245 245 210 205"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">浙江亲子自驾 · 7天6晚路线图</title>
+  <desc id="desc">按经纬度相对位置绘制杭州、宁波、温州、苍南、缙云、古堰画乡、松阳和衢州，并标注每段参考公里数和车程。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf8f1"/><stop offset="1" stop-color="#edf4ef"/></linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe8d4"/><stop offset=".55" stop-color="#e8eed8"/><stop offset="1" stop-color="#dce9d4"/></linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#17383e" flood-opacity=".14"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1f6d78"/></marker>
+    <style>
+      text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#183a40}
+      .muted{fill:#687d7e}.title{font-size:38px;font-weight:820}.subtitle{font-size:17px}
+      .city{font-size:20px;font-weight:780}.poi{font-size:14px;fill:#5b7072}
+      .day{font-size:17px;font-weight:760}.small{font-size:13px}.metric{font-size:14px;font-weight:760}
+      .glow{fill:none;stroke:#fff;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;opacity:.94}
+      .route{fill:none;stroke:#1f6d78;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .node{stroke:#fff;stroke-width:5}.labelbox{fill:#fffdf8;stroke:#dce6df}
+    </style>
+  </defs>
 
-  <g><circle class="dot" cx="210" cy="205" r="25" fill="#183a40"/><text x="80" y="205" class="city">杭州</text><text x="80" y="230" class="sub">D1出发 / D7返回</text></g>
-  <g><circle class="dot" cx="1010" cy="240" r="27" fill="#e6aa52"/><text x="1055" y="230" class="city">宁波 · 1晚</text><text x="1055" y="258" class="sub">天一阁 · 东钱湖 · 韩岭</text></g>
-  <g><circle class="dot" cx="610" cy="620" r="27" fill="#ef8d68"/><text x="650" y="605" class="city">温州 · 1晚</text><text x="650" y="633" class="sub">公园路 / 五马街 · 江心屿</text></g>
-  <g><circle class="dot" cx="600" cy="700" r="27" fill="#ef6f55"/><text x="650" y="695" class="city">苍南 · 1晚</text><text x="650" y="723" class="sub">浙南168短段 · 海边日落</text></g>
-  <g><circle class="dot" cx="390" cy="670" r="27" fill="#76956b"/><text x="120" y="680" class="city">缙云 · 1晚</text><text x="120" y="708" class="sub">仙都 · 朱潭山 · 倪翁洞</text></g>
-  <g><circle class="dot" cx="300" cy="365" r="27" fill="#7d9d6e"/><text x="340" y="355" class="city">松阳 · 1晚</text><text x="340" y="383" class="sub">古堰画乡 · 老街 · 古村</text></g>
-  <g><circle class="dot" cx="260" cy="470" r="27" fill="#8b7858"/><text x="40" y="475" class="city">衢州 · 1晚</text><text x="40" y="503" class="sub">水亭门 · 南孔 · 博物馆</text></g>
+  <rect width="1600" height="980" fill="url(#bg)"/>
+  <text x="54" y="62" class="title">浙江亲子自驾 · 7天6晚</text>
+  <text x="55" y="96" class="subtitle muted">按经纬度相对落点｜杭州 → 宁波 → 温州 → 苍南 → 缙云 → 古堰画乡 → 松阳 → 衢州 → 杭州</text>
 
-  <g transform="translate(1110 300)">
-    <rect width="420" height="420" rx="28" fill="#fff" stroke="#dce6df"/>
-    <text x="28" y="45" font-size="25" font-weight="800">7天行程</text>
-    <text x="28" y="88" class="day">D1  杭州 → 宁波</text>
-    <text x="28" y="132" class="day">D2  宁波 → 温州</text>
-    <text x="28" y="176" class="day">D3  温州 → 苍南</text>
-    <text x="28" y="220" class="day">D4  苍南 → 缙云</text>
-    <text x="28" y="264" class="day">D5  缙云 → 松阳</text>
-    <text x="28" y="308" class="day">D6  松阳 → 衢州</text>
-    <text x="28" y="352" class="day">D7  衢州 → 杭州</text>
-    <text x="28" y="395" class="sub">10/1返杭：实时路况优先于上午景点</text>
+  <g transform="translate(42 130)">
+    <rect width="1020" height="800" rx="30" fill="#e8f2f2" filter="url(#shadow)"/>
+    <path d="M20 20 H690 C760 47 850 85 924 158 C963 197 974 250 965 313 C955 385 918 431 890 484 C848 564 805 646 777 780 H20 Z" fill="url(#land)"/>
+    <text x="38" y="43" class="small muted" letter-spacing="2">北 ↑　相对地理位置示意 · 不替代导航</text>
+
+    <path class="glow" d="M518 110 C650 102 780 128 908 188"/>
+    <path class="glow" d="M908 188 C860 302 770 424 668 536"/>
+    <path class="glow" d="M668 536 C650 576 628 610 591 628"/>
+    <path class="glow" d="M591 628 C575 548 542 468 497 417"/>
+    <path class="glow" d="M497 417 C463 461 425 504 401 512 C369 525 349 487 326 458"/>
+    <path class="glow" d="M326 458 C272 434 218 398 155 365"/>
+    <path class="glow" d="M155 365 C260 260 384 173 518 110"/>
+
+    <path class="route" d="M518 110 C650 102 780 128 908 188"/>
+    <path class="route" d="M908 188 C860 302 770 424 668 536"/>
+    <path class="route" d="M668 536 C650 576 628 610 591 628"/>
+    <path class="route" d="M591 628 C575 548 542 468 497 417"/>
+    <path class="route" d="M497 417 C463 461 425 504 401 512 C369 525 349 487 326 458"/>
+    <path class="route" d="M326 458 C272 434 218 398 155 365"/>
+    <path class="route" d="M155 365 C260 260 384 173 518 110"/>
+
+    <g transform="translate(670 78)" filter="url(#shadow)"><rect class="labelbox" width="136" height="48" rx="13"/><text x="68" y="21" text-anchor="middle" class="metric">155 km</text><text x="68" y="38" text-anchor="middle" class="small muted">约 1.9—2.1h</text></g>
+    <g transform="translate(804 331)" filter="url(#shadow)"><rect class="labelbox" width="145" height="48" rx="13"/><text x="72" y="21" text-anchor="middle" class="metric">269 km</text><text x="72" y="38" text-anchor="middle" class="small muted">约 3.8—4.2h</text></g>
+    <g transform="translate(688 580)" filter="url(#shadow)"><rect class="labelbox" width="124" height="48" rx="13"/><text x="62" y="21" text-anchor="middle" class="metric">66 km</text><text x="62" y="38" text-anchor="middle" class="small muted">约 1.1h</text></g>
+    <g transform="translate(600 450)" filter="url(#shadow)"><rect class="labelbox" width="158" height="48" rx="13"/><text x="79" y="21" text-anchor="middle" class="metric">240—270 km</text><text x="79" y="38" text-anchor="middle" class="small muted">约 3.5—4.0h</text></g>
+    <g transform="translate(356 585)" filter="url(#shadow)"><rect class="labelbox" width="166" height="48" rx="13"/><text x="83" y="21" text-anchor="middle" class="metric">145—160 km</text><text x="83" y="38" text-anchor="middle" class="small muted">含古堰画乡 · 2.5—3h</text></g>
+    <g transform="translate(174 485)" filter="url(#shadow)"><rect class="labelbox" width="128" height="48" rx="13"/><text x="64" y="21" text-anchor="middle" class="metric">121 km</text><text x="64" y="38" text-anchor="middle" class="small muted">约 1.6h</text></g>
+    <g transform="translate(292 230)" filter="url(#shadow)"><rect class="labelbox" width="134" height="48" rx="13"/><text x="67" y="21" text-anchor="middle" class="metric">225 km</text><text x="67" y="38" text-anchor="middle" class="small muted">常态约 2.8h</text></g>
+
+    <g transform="translate(518 110)"><circle class="node" r="25" fill="#183a40"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">1</text></g>
+    <g transform="translate(445 55)"><rect width="135" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">杭州</text></g>
+
+    <g transform="translate(908 188)"><circle class="node" r="27" fill="#e6aa52"/><text y="7" text-anchor="middle" font-size="19" font-weight="800">2</text></g>
+    <g transform="translate(756 139)"><rect width="140" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">宁波 · 1晚</text></g>
+
+    <g transform="translate(668 536)"><circle class="node" r="27" fill="#ef8d68"/><text y="7" text-anchor="middle" font-size="19" font-weight="800">3</text></g>
+    <g transform="translate(703 505)"><rect width="145" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">温州 · 1晚</text></g>
+
+    <g transform="translate(591 628)"><circle class="node" r="27" fill="#ef6f55"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">4</text></g>
+    <g transform="translate(616 650)"><rect width="145" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">苍南 · 1晚</text></g>
+
+    <g transform="translate(497 417)"><circle class="node" r="27" fill="#76956b"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">5</text></g>
+    <g transform="translate(520 379)"><rect width="145" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">缙云 · 1晚</text></g>
+
+    <g transform="translate(401 512)"><rect x="-8" y="-8" width="16" height="16" rx="3" fill="#1f6d78" stroke="#fff" stroke-width="3" transform="rotate(45)"/></g>
+    <g transform="translate(315 523)"><rect width="155" height="36" rx="12" fill="#fff"/><text x="12" y="24" class="poi" font-weight="760">古堰画乡 · 途经</text></g>
+
+    <g transform="translate(326 458)"><circle class="node" r="27" fill="#7d9d6e"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">6</text></g>
+    <g transform="translate(260 399)"><rect width="145" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">松阳 · 1晚</text></g>
+
+    <g transform="translate(155 365)"><circle class="node" r="27" fill="#8b7858"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">7</text></g>
+    <g transform="translate(46 306)"><rect width="145" height="40" rx="13" fill="#fff"/><text x="14" y="26" class="city">衢州 · 1晚</text></g>
+
+    <g transform="translate(52 718)">
+      <rect width="875" height="59" rx="16" fill="#fff7df" stroke="#e2c990"/>
+      <text x="18" y="23" class="small" font-weight="760">景区绕行：</text>
+      <text x="93" y="23" class="small muted">D3 的 66 km 只到苍南县城，浙南168另计约 30—60 km；D5 的 145—160 km 已包含古堰画乡。</text>
+      <text x="18" y="44" class="small muted">落点强调相对方向，不表示行政边界或真实道路曲线。</text>
+    </g>
   </g>
 
-  <g transform="translate(850 58)">
-    <rect width="520" height="82" rx="18" fill="#fff7df" stroke="#e2c990"/>
-    <text x="260" y="31" text-anchor="middle" font-size="17" font-weight="700">旅行主线：美食 · 自然风光 · 人文</text>
-    <text x="260" y="58" text-anchor="middle" class="sub">每天一个核心体验，不赶路、不刷景点</text>
+  <g transform="translate(1090 130)">
+    <rect width="470" height="800" rx="30" fill="#fffdf8" filter="url(#shadow)"/>
+    <text x="28" y="47" font-size="25" font-weight="820">7天转场速览</text>
+    <text x="28" y="74" class="small muted">公里数为规划参考，出发当天以导航为准</text>
+
+    <g transform="translate(28 100)"><text class="day">D1　杭州 → 宁波</text><text y="25" class="poi">155 km · 约 1.9—2.1h</text></g>
+    <g transform="translate(28 178)"><text class="day">D2　宁波 → 温州</text><text y="25" class="poi">269 km · 约 3.8—4.2h</text><text y="45" class="small" fill="#d65a42">该段接近4小时，建议13:00前后出发</text></g>
+    <g transform="translate(28 276)"><text class="day">D3　温州 → 苍南</text><text y="25" class="poi">66 km · 约 1.1h</text><text y="45" class="small muted">浙南168短段另计 30—60 km</text></g>
+    <g transform="translate(28 374)"><text class="day">D4　苍南海岸 → 缙云</text><text y="25" class="poi">240—270 km · 约 3.5—4.0h</text></g>
+    <g transform="translate(28 452)"><text class="day">D5　缙云 → 古堰画乡 → 松阳</text><text y="25" class="poi">145—160 km · 约 2.5—3.0h</text></g>
+    <g transform="translate(28 530)"><text class="day">D6　松阳 → 衢州</text><text y="25" class="poi">121 km · 约 1.6h</text></g>
+    <g transform="translate(28 608)"><text class="day">D7　衢州 → 杭州</text><text y="25" class="poi">225 km · 常态约 2.8h</text><text y="45" class="small" fill="#d65a42">10月1日按实时路况决定出发时间</text></g>
+
+    <g transform="translate(24 694)">
+      <rect width="422" height="82" rx="18" fill="#edf4f1" stroke="#d5e3dd"/>
+      <text x="18" y="30" font-size="16" font-weight="780">总主转场约 1,250—1,330 km</text>
+      <text x="18" y="55" class="small muted">不含市区找餐厅、酒店和景区接驳小段</text>
+    </g>
   </g>
 </svg>
