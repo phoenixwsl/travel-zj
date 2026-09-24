@@ -24,8 +24,8 @@
 
     <g transform="translate(648 58)" filter="url(#shadow)"><rect class="labelbox" width="176" height="68" rx="16"/><text x="88" y="29" text-anchor="middle" class="km">155 km</text><text x="88" y="52" text-anchor="middle" class="time">约 2h</text></g>
     <g transform="translate(786 300)" filter="url(#shadow)"><rect class="labelbox" width="188" height="68" rx="16"/><text x="94" y="29" text-anchor="middle" class="km">269 km</text><text x="94" y="52" text-anchor="middle" class="time">约 4h</text></g>
-    <g transform="translate(690 590)" filter="url(#shadow)"><rect class="labelbox" width="165" height="68" rx="16"/><text x="82" y="29" text-anchor="middle" class="km">66 km</text><text x="82" y="52" text-anchor="middle" class="time">约 1.1h</text></g>
-    <g transform="translate(594 463)" filter="url(#shadow)"><rect class="labelbox" width="218" height="68" rx="16"/><text x="109" y="29" text-anchor="middle" class="km">240—270 km</text><text x="109" y="52" text-anchor="middle" class="time">约 3.5—4h</text></g>
+    <g transform="translate(690 590)" filter="url(#shadow)"><rect class="labelbox" width="165" height="68" rx="16"/><text x="82" y="29" text-anchor="middle" class="km">66 km</text><text x="82" y="52" text-anchor="middle" class="time">至县城 · 约1.1h</text></g>
+    <g transform="translate(594 463)" filter="url(#shadow)"><rect class="labelbox" width="218" height="68" rx="16"/><text x="109" y="29" text-anchor="middle" class="km">240—270 km</text><text x="109" y="52" text-anchor="middle" class="time">原估 · 3.5—4h</text></g>
     <g transform="translate(342 570)" filter="url(#shadow)"><rect class="labelbox" width="230" height="72" rx="16"/><text x="115" y="29" text-anchor="middle" class="km">145—160 km</text><text x="115" y="54" text-anchor="middle" class="time">含古堰画乡 · 2.5—3h</text></g>
     <g transform="translate(174 477)" filter="url(#shadow)"><rect class="labelbox" width="172" height="68" rx="16"/><text x="86" y="29" text-anchor="middle" class="km">121 km</text><text x="86" y="52" text-anchor="middle" class="time">约 1.6h</text></g>
     <g transform="translate(272 220)" filter="url(#shadow)"><rect class="labelbox" width="178" height="68" rx="16"/><text x="89" y="29" text-anchor="middle" class="km">225 km</text><text x="89" y="52" text-anchor="middle" class="time">常态约 2.8h</text></g>
@@ -33,7 +33,7 @@
     <g transform="translate(518 110)"><circle class="node" r="25" fill="#183a40"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">1</text></g><text x="445" y="72" class="city">杭州</text>
     <g transform="translate(908 188)"><circle class="node" r="27" fill="#e6aa52"/><text y="7" text-anchor="middle" font-size="19" font-weight="800">2</text></g><text x="780" y="156" class="city">宁波</text>
     <g transform="translate(668 536)"><circle class="node" r="27" fill="#ef8d68"/><text y="7" text-anchor="middle" font-size="19" font-weight="800">3</text></g><text x="704" y="536" class="city">温州</text>
-    <g transform="translate(591 628)"><circle class="node" r="27" fill="#ef6f55"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">4</text></g><text x="618" y="674" class="city">苍南</text>
+    <g transform="translate(591 628)"><circle class="node" r="27" fill="#ef6f55"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">4</text></g><text x="618" y="674" class="city">苍南（宿渔寮）</text>
     <g transform="translate(497 417)"><circle class="node" r="27" fill="#76956b"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">5</text></g><text x="528" y="400" class="city">缙云</text>
     <g transform="translate(401 512)"><rect x="-8" y="-8" width="16" height="16" rx="3" fill="#1f6d78" stroke="#fff" stroke-width="3" transform="rotate(45)"/></g><text x="349" y="548" class="poi" font-weight="760">古堰画乡</text>
     <g transform="translate(326 458)"><circle class="node" r="27" fill="#7d9d6e"/><text y="7" text-anchor="middle" fill="#fff" font-size="19" font-weight="800">6</text></g><text x="255" y="418" class="city">松阳</text>
@@ -45,11 +45,11 @@
     <text x="28" y="48" font-size="25" font-weight="820">7天转场</text>
     <g transform="translate(28 92)"><text class="day">D1　杭州 → 宁波</text><text y="27" class="poi">155 km · 约2h</text></g>
     <g transform="translate(28 168)"><text class="day">D2　宁波 → 温州</text><text y="27" class="poi">269 km · 约4h</text></g>
-    <g transform="translate(28 244)"><text class="day">D3　温州 → 苍南</text><text y="27" class="poi">66 km · 约1.1h</text></g>
-    <g transform="translate(28 320)"><text class="day">D4　苍南 → 缙云</text><text y="27" class="poi">240—270 km · 约3.5—4h</text></g>
+    <g transform="translate(28 244)"><text class="day">D3　温州 → 苍南渔寮酒店</text><text y="27" class="poi">至县城66 km · 渔寮酒店全程另查</text></g>
+    <g transform="translate(28 320)"><text class="day">D4　渔寮酒店 → 缙云</text><text y="27" class="poi">原估240—270 km · 从渔寮出发复核</text></g>
     <g transform="translate(28 396)"><text class="day">D5　缙云 → 古堰画乡 → 松阳</text><text y="27" class="poi">145—160 km · 约2.5—3h</text></g>
     <g transform="translate(28 472)"><text class="day">D6　松阳 → 衢州</text><text y="27" class="poi">121 km · 约1.6h</text></g>
     <g transform="translate(28 548)"><text class="day">D7　衢州 → 杭州</text><text y="27" class="poi">225 km · 常态约2.8h</text></g>
-    <g transform="translate(24 626)"><rect width="422" height="82" rx="18" fill="#fff7df" stroke="#e2c990"/><text x="18" y="30" font-size="16" font-weight="780">10月1日返杭：实时路况优先</text><text x="18" y="56" class="small muted">浙南168和景区道路另计里程</text></g>
+    <g transform="translate(24 626)"><rect width="422" height="82" rx="18" fill="#fff7df" stroke="#e2c990"/><text x="18" y="30" font-size="16" font-weight="780">10月2日返杭：实时路况优先</text><text x="18" y="56" class="small muted">D3 / D4按渔寮酒店定位核对车程</text></g>
   </g>
 </svg>
